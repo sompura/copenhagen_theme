@@ -7,15 +7,27 @@
 
   <div class="results">
     <section class="results-sidebar">
+      {{#if help_center_filters}}
+        <section class="filters-in-section collapsible-sidebar">
+          <h3 class="collapsible-sidebar-title sidenav-title">{{t 'filter_by_help_center'}}</h3>
+          <ul>
+            {{#each help_center_filters}}
+              <li>
+                <a href="{{url}}" class="sidenav-item" aria-selected="{{selected}}">{{name}} ({{count}})</a>
+              </li>
+            {{/each}}
+          </ul>
+        </section>
+      {{/if}}
       {{#if help_center.community_enabled}}
         <section class="filters-in-section collapsible-sidebar">
           <h3 class="collapsible-sidebar-title sidenav-title">{{t 'filter_by_type'}}</h3>
-            <ul>
-              {{#each filters}}
-                <li>
-                  <a href="{{url}}" class="sidenav-item" aria-selected="{{selected}}">{{name}}</a>
-                </li>
-              {{/each}}
+          <ul>
+            {{#each filters}}
+              <li>
+                <a href="{{url}}" class="sidenav-item" aria-selected="{{selected}}">{{name}} ({{count}})</a>
+              </li>
+            {{/each}}
           </ul>
         </section>
       {{/if}}
@@ -30,7 +42,7 @@
           <ul>
             {{#each subfilters}}
               <li>
-                <a href="{{url}}" class="sidenav-item" aria-selected="{{selected}}">{{name}}</a>
+                <a href="{{url}}" class="sidenav-item" aria-selected="{{selected}}">{{name}} ({{count}})</a>
               </li>
             {{/each}}
           </ul>
