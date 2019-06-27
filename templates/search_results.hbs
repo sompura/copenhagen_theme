@@ -52,15 +52,15 @@
 
     <section class="results-column">
       <h3 class="results-subheading">
-      {{#is current_filter.identifier 'unified'}}
-        {{t 'preview_result_header' query=query count=results_count}}
-      {{else}}
-        {{#is current_subfilter.identifier 'all'}}
+        {{#is current_filter.identifier 'unified'}}
           {{t 'results' query=query count=results_count}}
         {{else}}
-          {{t 'results_with_scope' query=query count=results_count scope_name=current_subfilter.name}}
+          {{#unless current_subfilter.identifier}}
+            {{t 'results' query=query count=results_count}}
+          {{else}}
+            {{t 'results_with_scope' query=query count=results_count scope_name=current_subfilter.name}}
+          {{/unless}}
         {{/is}}
-      {{/is}}
       </h3>
       {{#if results}}
         <ul class="results-list">
