@@ -231,11 +231,8 @@
   font-size: 12px;
   text-align: center;
 
-  &::after {
-    content: "\1f512";
+  .profile-private-icon {
     margin-left: 5px;
-    font-family: "copenhagen-icons";
-    vertical-align: middle;
     line-height: 15px;
   }
 
@@ -367,16 +364,25 @@
   border-bottom: 1px solid #eee;
 }
 
-.profile-contribution-list > .profile-contribution::before {
+.profile-contribution-icon {
+  top: 25px;
   left: 0;
   position: absolute;
-  font-size: 16px;
-  color: #ccc;
-  font-family: "copenhagen-icons";
-  line-height: 25px;
-
+  
   [dir="rtl"] & {
     right: 0;
+  }
+  
+  .profile-comments & {
+    top: 30px;
+  }
+
+  &::before {
+    display: block;
+    content: "";
+    background-size: cover;
+    width: 1em;
+    height: 1em;
   }
 }
 
@@ -423,13 +429,7 @@
   color: #999;
 }
 
-.profile-section .private-activity::before {
-  content: "\1f512";
-  font-family: "copenhagen-icons";
-  font-style: normal;
-  font-size: 12px;
-  font-weight: normal;
-  vertical-align: middle;
+.private-activity-icon {
   margin-right: 10px;
 
   [dir="rtl"] & {
@@ -532,21 +532,18 @@
 
 // Icons
 
-.profile-activity::before {
+.profile-activity-icon {
   position: absolute;
   left: 0;
   width: 28px;
+  height: 28px;
   border-radius: 50%;
-  content: "";
   background-size: 14px 14px;
   background-repeat: no-repeat;
   background-color: $background_color;
   background-position: 50% 50%;
   text-align: center;
-  line-height: 40px;
-  font-size: 16px;
   color: #ccc;
-  font-family: "copenhagen-icons";
 
  [dir="rtl"] & {
     right: 0;
@@ -561,20 +558,29 @@
   }
 }
 
+.profile-activity-icon::before {
+  @include vertical-align;
+  content: "";
+  display: block;
+  background-size: cover;
+  width: 1em;
+  height: 1em;
+  margin: auto;
+}
+
 // Icons
 
-.profile-articles > .profile-contribution::before,
-.profile-activity-list > li[class$="-article"]::before {
-  content: "\1f4c4";
+.profile-articles .profile-contribution-icon::before,
+.profile-activity-list > li[class$="-article"] .profile-activity-icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' focusable='false' viewBox='0 0 12 12'%3E%3Cpath fill='none' stroke='%23cccccc' stroke-linecap='round' d='M3.5 5.5h5m-5 2h5m-5 2h5m2-6.29V11c0 .28-.22.5-.5.5H2c-.28 0-.5-.22-.5-.5V1c0-.28.22-.5.5-.5h5.79c.13 0 .26.05.35.15l2.21 2.21c.1.09.15.21.15.35zM7.5.5V3c0 .28.22.5.5.5h2.5'/%3E%3C/svg%3E");
 }
 
-.profile-posts > .profile-contribution::before,
-.profile-activity-list > li[class$="-post"]::before {
-  content: "\1f4d4";
+.profile-posts .profile-contribution-icon::before,
+.profile-activity-list > li[class$="-post"] .profile-activity-icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' focusable='false' viewBox='0 0 12 12'%3E%3Cpath fill='none' stroke='%23cccccc' d='M6 .5H2C1.2.5.5 1.2.5 2c0 .6.4 1.2 1 1.4v1.9c0 .4.5.7.9.3l2.1-2.1H6c.8 0 1.5-.7 1.5-1.5S6.8.5 6 .5zm0 5h4c.8 0 1.5.7 1.5 1.5 0 .6-.4 1.2-1 1.4v1.9c0 .4-.5.7-.9.4L7.5 8.5H6c-.8 0-1.5-.7-1.5-1.5S5.2 5.5 6 5.5z'/%3E%3C/svg%3E");
 }
 
-.profile-comments > .profile-contribution::before,
-.profile-activity-list > li[class$="-comment"]::before {
-  content: "\1f4ac";
-  line-height: 35px;
+.profile-comments .profile-contribution-icon::before,
+.profile-activity-list > li[class$="-comment"] .profile-activity-icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' focusable='false' viewBox='0 0 12 12'%3E%3Cpath fill='none' stroke='%23cccccc' d='M1 .5h10c.3 0 .5.2.5.5v7c0 .3-.2.5-.5.5H6l-2.6 2.6c-.3.3-.9.1-.9-.4V8.5H1C.7 8.5.5 8.3.5 8V1C.5.7.7.5 1 .5z'/%3E%3C/svg%3E");
 }
