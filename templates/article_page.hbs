@@ -61,6 +61,7 @@
                 <li class="meta-data">{{date article.edited_at timeago=true}}</li>
                 <li class="meta-data">{{t 'updated'}}</li>
               {{/is}}
+              <li class="meta-data">{{readtime}}</li>
             </ul>
           </div>
         </div>
@@ -123,6 +124,7 @@
         <div class="article-return-to-top">
           <a href="#article-container">{{t 'return_to_top'}}<span class="icon-arrow-up"></span></a>
         </div>
+        {{pageviewstats}}
       </footer>
 
       <section class="article-relatives">
@@ -234,3 +236,5 @@
     </article>
   </div>
 </div>
+{{readtimescript}}
+
