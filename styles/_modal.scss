@@ -1,0 +1,89 @@
+.c_modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $background_color;
+    z-index: 101;
+    box-sizing: border-box;
+    padding: 15px;
+    width: 90%;
+
+    &.c_modal-centered {
+        text-align: center;
+    }
+
+    @include tablet {
+
+        &.c_modal-tiny {
+            width: 30%;
+        }
+    
+        &.c_modal-small {
+            width: 40%;
+        }
+    
+        &.c_modal-medium {
+            width: 50%;
+        }
+    
+        &.c_modal-large {
+            width: 70%;
+        }
+
+    }    
+
+}
+
+.c_modal-close {
+    cursor: pointer;
+    position: absolute;
+    right: 12px;
+    top: 8px;
+}
+
+.c_modal-content {
+    padding: 10px 20px;
+    box-sizing: border-box;
+
+    h3 {
+        font-family: $heading_font;
+        font-size: 24px;
+    }
+
+    p {
+        font-family: $text_font;
+        font-size: 16px;
+    }
+
+}
+
+.c_modal-cta {
+    margin: 20px 0 25px;
+
+    .c_modal-primaryCTA {
+        border: 2px solid $text-color;
+        color: $text-color;
+        text-decoration: none;
+        font-family: $text_font;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+        padding: 10px 20px;
+    }
+
+}
+
+.c_modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $text_color;    
+    z-index: 100;
+    opacity: 0.7;
+}

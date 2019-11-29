@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
     toggle.focus();
   }
 
-  var burgerMenu = document.querySelector('.header .menu-button');
+  /*var burgerMenu = document.querySelector('.header .menu-button');
   var userMenu = document.querySelector('#user-nav');
 
   burgerMenu.addEventListener('click', function(e) {
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (userMenu.children.length === 0) {
     burgerMenu.style.display = 'none';
-  }
+  }*/
 
   // Toggles expanded aria to collapsible elements
   var collapsible = document.querySelectorAll('.collapsible-nav, .collapsible-sidebar');
@@ -211,4 +211,142 @@ document.addEventListener('DOMContentLoaded', function() {
       })
     }
   });
+});
+
+var BO_JS = {
+
+  init: function(){
+    console.log('BO_JS initiated');
+
+    this.locale = $('html').attr('lang');
+    this.$articleVotesContainer = $('.article-votes');
+    this.$articleBody = $('#article-container').find('.article-body');
+    this.$modalBoxTrigger = $('.modalTrigger');
+    this.$modalBackdrop = $('.c_modal-backdrop');
+    this.$modalClose = $('.c_modal-close');
+    this.$categoryContainer = $('.c_products');
+
+    this._setCategorySection();
+    this._setVideoResponsive();    
+    //this._fetchCategories();
+    this._bindEvents();
+
+  },
+
+  _debounce: function(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+  },
+
+  _handleResize: function() {    
+    
+    //update category section height
+    var categoryContainerWidth = this.$categoryContainer.find('.c_products-categoryVisual').width();
+    this.$categoryContainer.find('.c_products-categoryVisual').height(categoryContainerWidth);
+
+  },
+
+  _setCategorySection: function() {
+    
+    //set category section height
+    var categoryContainerWidth = this.$categoryContainer.find('.c_products-categoryVisual').width();
+    this.$categoryContainer.find('.c_products-categoryVisual').height(categoryContainerWidth);
+
+    //replace placeholder image
+    var categoryImages = this.$categoryContainer.find('.c_products-categoryVisual > img');    
+    categoryImages.each(function(index, image) {            
+      var visualImage = $(image).attr("src").substring(0, $(image).attr("src").lastIndexOf("/")+1) + $(image).attr("data-image").replace(/ /g,"_").toLowerCase() + ".png";
+      $(image).attr("src", visualImage);
+    }.bind(this));
+
+  },
+
+  _fetchCategories: function() {
+
+    var self = this;        
+
+    $.ajax({
+      url: "/api/v2/help_center/" + self.locale.toLowerCase() +"/categories.json",      
+      success: function(data){
+        console.log(data);
+      }
+    });
+
+  },
+  
+  _setVideoResponsive: function() {
+
+    if($("#article-container .article-body iframe[src*='www.youtube-nocookie.com']").length > 0) {
+      // Find all YouTube videos
+      var $allVideos = this.$articleBody.find("iframe[src*='www.youtube-nocookie.com']");
+  
+      // Adding wrapper and styles to enable responsive behavior
+      $allVideos.each(function() {
+        var $el = $(this);
+  
+        $el.wrap('<div class="videoWrapper">');
+  
+        $(this).css({
+          'position': 'absolute',
+          'top': '0',
+          'left': '0',
+          'width': '100%',
+          'height': '100%'
+        })
+  
+        $(this).parent().css({
+          'position' : 'relative',
+          'padding-bottom' : '56.25%',
+          'padding-top' : '25px',
+          'height' : '0',
+          'margin-bottom' : '15px'
+        });
+      });
+    } 
+
+  },
+
+  _bindEvents: function() {
+    var self = this;  
+    
+    var debounceResize = self._debounce(function() {                
+      self._handleResize();
+    }, 50);
+
+    $(window).resize(debounceResize);
+
+    this.$modalBoxTrigger.on('click', function(e) {
+      e.preventDefault();
+      var modal = $(this).attr('data-modal');
+      self.$modalBackdrop.show();
+      $('#' + modal).fadeIn(500);      
+    });
+
+    this.$modalBackdrop.on('click', function(e) {
+      $(this).hide();
+      $('.c_modal').fadeOut(300);
+    });
+
+    this.$modalClose.on('click', function() {
+      self.$modalBackdrop.hide();
+      $('.c_modal').fadeOut(300);
+    });
+
+  }
+  
+}
+
+$(document).ready(function() {  
+  //init the JS
+  BO_JS.init();
 });

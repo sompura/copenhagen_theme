@@ -1,0 +1,214 @@
+/***** B&O Header *****/
+
+.c_header {
+    width: 100%;    
+}
+
+.c_header-branding {
+    position: relative;
+    text-align: center;    
+    vertical-align: top;
+    margin: 10px 36px;
+}
+
+.c_header-logo {
+
+    a {
+        padding: 10px;
+        display: inline-block;
+        line-height: .6;
+        
+        img {
+            max-width: 168px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 18px;
+            margin-left: 5px;
+            color: zass-lighten($text_color, 50%);
+        }
+
+    }
+    
+}
+
+.c_header-backToMainSite {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);    
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+      color: $text_color;
+      font-size: $font-size-small;
+      letter-spacing: 2px;
+    }
+
+}
+
+.c_header-menuTrigger {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);    
+    cursor: pointer;
+}
+
+.c_header-userNavigation {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);   
+    
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
+
+            [dir="rtl"] & {
+                margin-left: 0;
+                margin-right: 10px;
+            }
+
+            .user-info {
+
+              [role="button"] {
+                color: $text_color;
+
+                &:after {
+                  color: $text_color;
+                }
+
+              }              
+
+              #user-name {
+                margin-left: 5px;
+              }
+
+            } 
+        }
+    }
+
+}
+
+.c_header-navigation {
+    padding: 12px 0;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    text-align: center;
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 45px;
+            text-transform: uppercase;
+
+            a {
+                color: $text_color;
+                text-decoration: none;
+                font-size: 0.75rem;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                font-weight: 500;                
+                line-height: 1.4;
+            }
+        }
+    }
+}
+
+.logo img {
+  max-height: 37px;
+}
+
+.user-nav {
+  @include tablet { position: relative; }
+  display: inline-block;
+  position: absolute;
+  white-space: nowrap;
+
+  &[aria-expanded="true"] {
+    background-color: #fff;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .15), 0 4px 10px 0 rgba(0, 0, 0, .1);
+    border: solid 1px #ddd;
+    right: 0;
+    left: 0;
+    //top: $header-height;
+    z-index: 1;
+
+    > a {
+      display: block;
+      margin: 20px;
+    }
+  }
+}
+
+.nav-wrapper {
+  a {
+    @include tablet {
+      display: inline-block;
+    }
+
+    border: 0;
+    color: $link_color;
+    display: none;
+    font-size: 14px;
+    padding: 0 20px 0 0;
+    width: auto;
+
+    [dir="rtl"] & { padding: 0 0 0 20px;}
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+      color: $link_color;
+      text-decoration: underline;
+    }
+
+    &.login { display: inline-block; }
+  }
+
+  .menu-button {
+    @include tablet { display: none; }
+    background: none;
+    border: 0;
+    color: $link_color;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0;
+    width: auto;
+
+    .icon-menu {
+      vertical-align: middle;
+      width: 13px;
+      height: 13px;
+    }
+
+    [dir="rtl"] & {
+      margin-left: 10px;
+      margin-right: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+      color: $link_color;
+    }
+  }
+}

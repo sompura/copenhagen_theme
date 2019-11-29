@@ -1,57 +1,56 @@
 <section class="section hero">
   <div class="hero-inner">
+    <div class="hero-inner-message"> {{dc 'welcome_support_message'}}</div>
     {{search submit=false instant=settings.instant_search class='search search-full'}}
   </div>
 </section>
 
 <div class="container">
-  <section class="section knowledge-base">
-    <section class="categories blocks">
-      <ul class="blocks-list">
-        {{#each categories}}
-          {{#if ../has_multiple_categories}}
+  <section class="section c_products">
+    <ul>
+      {{#each categories}}
+        {{#if ../has_multiple_categories}}
+          <li class="c_products-category">
+            <a href='{{url}}' class="c_products-categoryLink">
+              <div class="c_products-categoryVisual"><img src="{{asset 'default_category_visual.png'}}" data-image="{{id}}_{{name}}" /></div>
+              <h4 class="c_products-categoryTitle">{{name}}</h4>
+              <!--<p class="c_products-categoryDescription">{{excerpt description}}</p>-->
+            </a>
+          </li>
+        {{else}}
+          {{#each sections}}
             <li class="blocks-item">
-              <a href='{{url}}' class="blocks-item-link">
-                <h4 class="blocks-item-title">{{name}}</h4>
-                <p class="blocks-item-description">{{excerpt description}}</p>
+              <a href='{{url}}' class="c_products-categoryLink">
+                <div class="c_products-categoryVisual"><img src="{{asset 'default_category_visual.png'}}" data-image="{{id}}_{{name}}" /></div>
+                <h4 class="c_products-categoryTitle">{{name}}</h4>
+                <!--<p class="c_products-categoryDescription">{{excerpt description}}</p>-->
               </a>
             </li>
-          {{else}}
-            {{#each sections}}
-              <li class="blocks-item">
-                <a href='{{url}}' class="blocks-item-link">
-                  <h4 class="blocks-item-title">
-                    {{name}}
-                  </h4>
-                  <p class="blocks-item-description">{{excerpt description}}</p>
-                </a>
-              </li>
-            {{/each}}
-          {{/if}}
+          {{/each}}
+        {{/if}}
+      {{/each}}
+    </ul>
+    {{pagination}}
+  </section>  
+
+  <!--{{#if promoted_articles}}
+    <section class="articles">
+      <h3>{{t 'promoted_articles'}}</h3>
+      <ul class="article-list promoted-articles">
+        {{#each promoted_articles}}
+          <li class="promoted-articles-item">
+              <a href="{{url}}">
+                {{title}}
+
+                {{#if internal}}
+                  <span class="icon-lock" title="{{t 'internal'}}"></span>
+                {{/if}}
+              </a>
+          </li>
         {{/each}}
       </ul>
-      {{pagination}}
     </section>
-
-    {{#if promoted_articles}}
-      <section class="articles">
-        <h3>{{t 'promoted_articles'}}</h3>
-        <ul class="article-list promoted-articles">
-          {{#each promoted_articles}}
-            <li class="promoted-articles-item">
-                <a href="{{url}}">
-                  {{title}}
-
-                  {{#if internal}}
-                    <span class="icon-lock" title="{{t 'internal'}}"></span>
-                  {{/if}}
-                </a>
-            </li>
-          {{/each}}
-        </ul>
-      </section>
-    {{/if}}
-  </section>
+  {{/if}}-->
 
   {{#if help_center.community_enabled}}
     <section class="section home-section community">
@@ -64,9 +63,36 @@
     </section>
   {{/if}}
 
-  <section class="section home-section activity">
-    {{#if settings.show_recent_activity}}
-      {{recent_activity}}
-    {{/if}}
-  </section>
+  {{#if settings.show_recent_activity}}
+    <section class="section home-section activity">    
+      {{recent_activity}}    
+    </section>
+  {{/if}}
+
 </div>
+
+<div class="section">
+  <div class="container">
+    {{dc 'custom_content_primary'}}
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <a href="#" class="modalTrigger" data-modal="c_modal-message">Modal box</a>
+  </div>
+</div>
+
+<div id="c_modal-message" class="c_modal c_modal-small c_modal-centered">
+  <div class="c_modal-close"><span class="icon-close"></span></div>
+  <div class="c_modal-content">
+    <h3>Sorry for the mess but we're learning here</h3>
+    <p>We are currently running a pilot for our new support section.</p>
+    <p>This pilot is only covering our E8 and H9 headphones product range and it seems like you are looking for support with another product.</p>
+    <p>Don't worry. the link below will take  you to our regular support section.</p>    
+  </div>
+  <div class="c_modal-cta">
+    <a class="c_modal-primaryCTA" href="https://www.bang-olufsen.com/en/customer-service">B &amp; O Regular Support</a>
+  </div>
+</div>
+<div class="c_modal-backdrop"></div>

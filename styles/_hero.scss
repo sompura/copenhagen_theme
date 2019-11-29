@@ -12,5 +12,13 @@
     @include vertical-align;
     max-width: 610px;
     margin: 0 auto;
+
+    &-message {
+      font-size: 1.75em;
+      color: $text_color;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
   }
 }
