@@ -107,7 +107,7 @@
 body {
   background-color: $background_color;
   color: $text_color;
-  font-family: 'Gotham A', 'Gotham B', Arial, Helvetica, sans-serif;
+  font-family: $text_font;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
@@ -973,6 +973,29 @@ ul {
   font-weight: 500;
 }
 
+.c_hero {
+  position: relative;
+}
+
+.c_hero-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(0, -50%);
+}
+
+.c_hero-content h1 {
+  font-weight: 700;
+  font-size: 3em;
+  margin: 0;
+  padding: 0;
+}
+
+.c_hero-visual img {
+  display: block;
+  width: 100%;
+}
+
 .page-header {
   display: flex;
   flex-direction: column;
@@ -1167,27 +1190,27 @@ ul {
   text-align: center;
 }
 
-.c_products ul .c_products-category {
+.c_products ul .c_products-item {
   list-style: none;
   display: inline-block;
-  width: 15%;
-  margin: 15px calc(2.5% - 2px);
-  vertical-align: middle;
+  width: 14%;
+  margin: 15px calc(1% - 2px);
+  vertical-align: top;
 }
 
-.c_products ul .c_products-categoryLink {
+.c_products ul .c_products-itemLink {
   text-decoration: none;
   color: $text_color;
 }
 
-.c_products ul .c_products-categoryVisual {
+.c_products ul .c_products-itemVisual {
   margin-bottom: 10px;
   background: #f1f1f1;
   position: relative;
   overflow: hidden;
 }
 
-.c_products ul .c_products-categoryVisual img {
+.c_products ul .c_products-itemVisual img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1195,12 +1218,17 @@ ul {
   max-width: 100%;
 }
 
-.c_products ul .c_products-categoryTitle {
+.c_products ul .c_products-itemTitle {
   font-size: 13px;
   font-weight: 500;
   color: $text_color;
   text-transform: uppercase;
   letter-spacing: 3px;
+}
+
+.c_products.c_products--small ul .c_products-item {
+  width: 13.25%;
+  margin: 15px calc(0.5% - 2px) 0;
 }
 
 /***** Promoted articles *****/
@@ -1375,12 +1403,6 @@ ul {
 
 .category-content {
   flex: 1;
-}
-
-@media (min-width: 1024px) {
-  .category-content {
-    flex: 0 0 80%;
-  }
 }
 
 .section-tree {

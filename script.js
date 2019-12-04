@@ -218,17 +218,23 @@ var BO_JS = {
   init: function(){
     console.log('BO_JS initiated');
 
+    this.globalSettings = window.BO_settings;
+
+    console.log(this.globalSettings);
+
     this.locale = $('html').attr('lang');
     this.$articleVotesContainer = $('.article-votes');
     this.$articleBody = $('#article-container').find('.article-body');
     this.$modalBoxTrigger = $('.modalTrigger');
     this.$modalBackdrop = $('.c_modal-backdrop');
     this.$modalClose = $('.c_modal-close');
-    this.$categoryContainer = $('.c_products');
+    this.$productsContainer = $('.c_products');
+    this.$heroHeaderContainer = $('.c_hero');
 
-    this._setCategorySection();
+    this._setProductsSection();
     this._setVideoResponsive();    
     //this._fetchCategories();
+    this._fetchGlobalArticles();
     this._bindEvents();
 
   },
@@ -250,24 +256,53 @@ var BO_JS = {
 
   _handleResize: function() {    
     
-    //update category section height
-    var categoryContainerWidth = this.$categoryContainer.find('.c_products-categoryVisual').width();
-    this.$categoryContainer.find('.c_products-categoryVisual').height(categoryContainerWidth);
+    //update product section height
+    var productContainerWidth = this.$productsContainer.find('.c_products-itemVisual').width();
+    this.$productsContainer.find('.c_products-itemVisual').height(productContainerWidth);
 
   },
 
-  _setCategorySection: function() {
+  _setProductsSection: function() {
     
-    //set category section height
-    var categoryContainerWidth = this.$categoryContainer.find('.c_products-categoryVisual').width();
-    this.$categoryContainer.find('.c_products-categoryVisual').height(categoryContainerWidth);
+    //set product section height
+    var productContainerWidth = this.$productsContainer.find('.c_products-itemVisual').width();
+    this.$productsContainer.find('.c_products-itemVisual').height(productContainerWidth);
 
     //replace placeholder image
-    var categoryImages = this.$categoryContainer.find('.c_products-categoryVisual > img');    
-    categoryImages.each(function(index, image) {            
-      var visualImage = $(image).attr("src").substring(0, $(image).attr("src").lastIndexOf("/")+1) + $(image).attr("data-image").replace(/ /g,"_").toLowerCase() + ".png";
+    var productImages = this.$productsContainer.find('.c_products-itemVisual > img');    
+    productImages.each(function(index, image) {            
+      var visualImage = $(image).attr("src").substring(0, $(image).attr("src").lastIndexOf("/")+1) + $(image).attr("data-image") + ".png";
       $(image).attr("src", visualImage);
     }.bind(this));
+
+    //replace hero header image
+    var heroHeaderImages = this.$heroHeaderContainer.find('.c_hero-visual > img');    
+    heroHeaderImages.each(function(index, image) {            
+      var visualImage = $(image).attr("src").substring(0, $(image).attr("src").lastIndexOf("/")+1) + $(image).attr("data-image") + ".jpg";
+      $(image).attr("src", visualImage);
+    }.bind(this));
+
+  },
+
+  _fetchGlobalArticles: function() {
+
+    var self = this;   
+
+    var customArticleTemplate = $('#custom-template').html().replace(/\[/g, '{').replace(/]/g, '}');
+    var theTemplate = Handlebars.compile(customArticleTemplate);     
+
+    $.ajax({
+      url: "/api/v2/help_center/" + self.locale.toLowerCase() +"/categories/360002291372/articles.json",      
+      success: function(data){
+        console.log(data);
+        $.each(data.articles, function(index, el) {
+          if(el.id == self.globalSettings.customize_article_id) {            
+            var compileTemplate = theTemplate(el);             
+            $('.custom-article-template').html(compileTemplate)
+          }
+        });
+      }
+    });
 
   },
 

@@ -1,19 +1,32 @@
-<div class="container-divider"></div>
-<div class="container">
-  <nav class="sub-nav">
-    {{breadcrumbs}}
-    {{search submit=false}}
-  </nav>
+<section class="section c_hero">
+  <div class="c_hero-content"><h1>{{category.name}}</h1></div>
+  <div class="c_hero-visual">
+    <img src="{{asset 'default_item_visual.png'}}" data-image="headers/{{category.id}}" />
+  </div>
+</section>
 
+<div class="container">
+  <section class="section c_products c_products--small">
+    <ul>
+      {{#each sections}}        
+          <li class="c_products-item">
+            <a href='{{url}}' class="c_products-itemLink">
+              <div class="c_products-itemVisual"><img src="{{asset 'default_item_visual.png'}}" data-image="categories-sections/{{id}}" /></div>
+              <h4 class="c_products-itemTitle">{{name}}</h4>              
+            </a>
+          </li>
+      {{/each}}
+    </ul>
+  </section>
+  <!--
   <div class="category-container">
-    <div class="category-content">
+    <div class="category-content">       
       <header class="page-header">
-        <h1>{{category.name}}</h1>
+       <h1>{{category.name}}</h1>
         {{#if category.description}}
           <p class="page-header-description">{{category.description}}</p>
         {{/if}}
-      </header>
-
+      </header>      
       <div class="section-tree">
         {{#each sections}}
           <section class="section">
@@ -41,7 +54,7 @@
               {{/if}}
             {{/if}}
           </section>
-        {{else}}
+          {{else}}
           <i class="category-empty">
             <a href="{{category.url}}">{{t 'empty'}}</a>
           </i>
@@ -49,4 +62,14 @@
       </div>
     </div>
   </div>
+  -->
+</div>
+
+<div class="container-divider"></div>
+
+<div class="container"> 
+  <nav class="sub-nav">
+    <!--{{breadcrumbs}}-->
+    {{search submit=false}}
+  </nav>
 </div>

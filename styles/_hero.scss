@@ -22,3 +22,32 @@
 
   }
 }
+
+.c_hero {
+
+  position: relative;
+
+  &-content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(0, -50%);
+
+    h1 {
+      font-weight: 700;
+      font-size: 3em;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &-visual {
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+  }
+
+}
