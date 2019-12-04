@@ -270,16 +270,18 @@ var BO_JS = {
 
     //replace placeholder image
     var productImages = this.$productsContainer.find('.c_products-itemVisual > img');    
-    productImages.each(function(index, image) {            
+    productImages.each(function(index, image) {                  
+      var visualDynamicImage = "{{asset '" + $(image).attr("data-image") + ".png'}}";        
       var visualImage = $(image).attr("src").substring(0, $(image).attr("src").lastIndexOf("/")+1) + $(image).attr("data-image") + ".png";
-      $(image).attr("src", visualImage);
+      $(image).attr("src", visualDynamicImage);
     }.bind(this));
 
     //replace hero header image
     var heroHeaderImages = this.$heroHeaderContainer.find('.c_hero-visual > img');    
     heroHeaderImages.each(function(index, image) {            
+      var visualDynamicImage = "{{asset '" + $(image).attr("data-image") + ".png'}}";        
       var visualImage = $(image).attr("src").substring(0, $(image).attr("src").lastIndexOf("/")+1) + $(image).attr("data-image") + ".jpg";
-      $(image).attr("src", visualImage);
+      $(image).attr("src", visualDynamicImage);
     }.bind(this));
 
   },
