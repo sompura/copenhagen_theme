@@ -1,7 +1,7 @@
 <section class="section c_hero">
   <div class="c_hero-content"><h1>{{category.name}}</h1></div>
   <div class="c_hero-visual">
-    <img src="{{asset 'default_item_visual.png'}}" data-image="headers/{{category.id}}" />
+    <img src="{{asset 'default_item_visual.png'}}" data-image="headers_{{category.id}}" />
   </div>
 </section>
 
@@ -11,7 +11,7 @@
       {{#each sections}}        
           <li class="c_products-item">
             <a href='{{url}}' class="c_products-itemLink">
-              <div class="c_products-itemVisual"><img src="{{asset 'default_item_visual.png'}}" data-image="categories-sections/{{id}}" /></div>
+              <div class="c_products-itemVisual"><img src="{{asset 'default_item_visual.png'}}" data-image="categories_sections_{{id}}" /></div>
               <h4 class="c_products-itemTitle">{{name}}</h4>              
             </a>
           </li>
