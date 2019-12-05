@@ -216,11 +216,10 @@ document.addEventListener('DOMContentLoaded', function() {
 var BO_JS = {
 
   init: function(){
+    
     console.log('BO_JS initiated');
 
     this.globalSettings = window.BO_settings;
-
-    console.log(this.globalSettings);
 
     this.locale = $('html').attr('lang');
     this.$articleVotesContainer = $('.article-votes');
@@ -234,7 +233,7 @@ var BO_JS = {
     this._setProductsSection();
     this._setVideoResponsive();    
     //this._fetchCategories();
-    this._fetchGlobalArticles();
+    //this._fetchGlobalArticles();
     this._bindEvents();
 
   },
@@ -273,7 +272,7 @@ var BO_JS = {
     productImages.each(function(index, image) {                  
       var visualDynamicImage = "{{asset '" + $(image).attr("data-image") + ".png'}}";        
       var visualImage = $(image).attr("src").substring(0, $(image).attr("src").lastIndexOf("/")+1) + $(image).attr("data-image") + ".png";
-      $(image).attr("src", visualDynamicImage);
+      //$(image).attr("src", visualDynamicImage);
     }.bind(this));
 
     //replace hero header image
@@ -281,7 +280,7 @@ var BO_JS = {
     heroHeaderImages.each(function(index, image) {            
       var visualDynamicImage = "{{asset '" + $(image).attr("data-image") + ".png'}}";        
       var visualImage = $(image).attr("src").substring(0, $(image).attr("src").lastIndexOf("/")+1) + $(image).attr("data-image") + ".jpg";
-      $(image).attr("src", visualDynamicImage);
+      //$(image).attr("src", visualDynamicImage);
     }.bind(this));
 
   },
@@ -386,4 +385,5 @@ var BO_JS = {
 $(document).ready(function() {  
   //init the JS
   BO_JS.init();
+  
 });

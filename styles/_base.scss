@@ -6,8 +6,8 @@
 body {
   background-color: $background_color;
   color: $text_color;
-  font-family: $text_font;
-  //font-family: 'Gotham A', 'Gotham B', Arial, Helvetica, sans-serif;
+  //font-family: $text_font;
+  font-family: 'Gotham A', 'Gotham B', Arial, Helvetica, sans-serif;
   font-size: $font-size-base;
   font-weight: $font-weight-base;
   line-height: 1.5;
@@ -21,7 +21,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $heading_font;
+  //font-family: $heading_font;
+  font-family: 'Gotham A', 'Gotham B', Arial, Helvetica, sans-serif;
   font-weight: $font-weight-base;
   margin-top: 0;
 }

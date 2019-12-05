@@ -10,40 +10,57 @@
     <ul>
       {{#each categories}}
         {{#if ../has_multiple_categories}}
-          <li class="c_products-item">
-            <a href='{{url}}' class="c_products-itemLink">
-              <div class="c_products-itemVisual"><img src="{{asset 'default_item_visual.png'}}" data-image="categories_sections_{{id}}" /></div>
-              <h4 class="c_products-itemTitle">{{name}}</h4>              
-            </a>
-          </li>
+          {{#isnt id 360002291372}}
+            {{#isnt id 360002304511}}
+              {{#isnt id 360002304531}}
+                {{#isnt id 360002304551}}
+                  <li class="c_products-item">
+                    <a href='{{url}}' class="c_products-itemLink">
+                      <div class="c_products-itemVisual">
+                        {{#is id 360002296932}}<img src="{{asset 'bo_speakers.png'}}" alt="{{name}}" />{{/is}}
+                        {{#is id 360002304491}}<img src="{{asset 'bo_headphones.png'}}" alt="{{name}}" />{{/is}}
+                        {{#is id 360002296952}}<img src="{{asset 'bo_televisions.png'}}" alt="{{name}}" />{{/is}}
+                        {{#is id 360002296952}}<img src="{{asset 'bo_televisions.png'}}" alt="{{name}}" />{{/is}}
+                        {{#is id 360002384932}}<img src="{{asset 'bo_accessories.png'}}" alt="{{name}}" />{{/is}}
+                        {{#is id 360002384932}}<img src="{{asset 'bo_accessories.png'}}" alt="{{name}}" />{{/is}}
+                        {{#is id 360002405932}}<img src="{{asset 'bo_apps.png'}}" alt="{{name}}" />{{/is}}
+                        {{#is id 360002413751}}<img src="{{asset 'bo_others.png'}}" alt="{{name}}" />{{/is}}
+                      </div>
+                      <h4 class="c_products-itemTitle">{{name}}</h4>              
+                    </a>
+                  </li>
+                {{/isnt}}
+              {{/isnt}}  
+            {{/isnt}}
+          {{/isnt}}
         {{/if}}
       {{/each}}
     </ul>    
   </section>
 
-  <div class="custom-article-test">
-    <h3>Custom Article Test</h3>
-    {{#each categories}}
-      {{#is id 360002291372}}
-        {{#each sections}}
-          {{#is id 360007112072}}
-            {{#each articles}}
-              {{#is id 360037095852}}
-                <h4>{{title}}</h4>
-                <p>{{excerpt body characters=100}}</p>
-                <a  href="{{url}}">Get Started</a>
-              {{/is}}
-            {{/each}}
-          {{/is}}
-        {{/each}}
-      {{/is}}
-    {{/each}}
-  </div>
-
-  <div class="custom-article-template">
+  {{#each categories}}
+    {{#is id 360002291372}}
+      {{#each sections}}
+        {{#is id 360007112072}}
+          {{#each articles}}
+            {{#is id 360037095852}}
+              <div class="section c_teaserBlock">
+                <div class="c_teaserBlock-visual">
+                  <img src="{{asset 'bo_setup_customize.jpg'}}" alt="{{title}}" />
+                </div>
+                <div class="c_teaserBlock-content">
+                  <h3>{{title}}</h3>
+                  <p>{{excerpt body characters=100}}</p>
+                  <a  href="{{url}}" class="c_teaserBlock-cta">{{dc 'get_started'}}</a>
+                </div>
+              </div>
+            {{/is}}
+          {{/each}}
+        {{/is}}
+      {{/each}}
+    {{/is}}
+  {{/each}}
     
-  </div>
-
   <!--{{#if promoted_articles}}
     <section class="articles">
       <h3>{{t 'promoted_articles'}}</h3>
@@ -108,14 +125,8 @@
 </div>
 <div class="c_modal-backdrop"></div>
 
-<script id="custom-template" type="text/template">
-  <h4>[[title]]</h4>
-  [[[body]]]
-  <a href='[[url]]'>Get Started</a>
-</script>
-
 <script type="text/javascript">
   window.BO_settings = {
     "customize_article_id" : "{{dc 'customize_your_product_article_id'}}"
-  }
+  };
 </script>

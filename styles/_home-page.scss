@@ -20,14 +20,24 @@
   ul {
     margin: 0;
     padding: 0;
-    text-align: center;
+    text-align: left;
 
     .c_products-item {
       list-style: none;
       display: inline-block;
-      width: 14%;
-      margin: 15px calc(1% - 2px);
+      width: calc(25% - 22px);
+      margin: 12px 24px 12px 0;
       vertical-align: top;
+      background: $light-gray;
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+
+      &:hover {
+        background: rgba($black, 0.035);
+      }
+
     }
 
     .c_products-itemLink {
@@ -36,8 +46,7 @@
     }
 
     .c_products-itemVisual {
-      margin-bottom: 10px;
-      background: $border-color;
+      margin-bottom: -20px;      
       position: relative;
       overflow: hidden;
 
@@ -46,17 +55,20 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        max-width: 100%;
+        max-width: 70%;
       }
 
     }
 
     .c_products-itemTitle {
       font-size: $font-size-small;
-      font-weight: 500;
+      font-weight: 600;
       color: $text_color;
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 1px;
+      margin: 0;
+      padding: 0 50px 24px;
+      text-align: right;
     }
 
   }
@@ -68,6 +80,64 @@
         width: 13.25%;
         margin: 15px calc(0.5% - 2px) 0;
       }
+    }
+
+  }
+
+}
+
+/***** Teaser Block *****/
+
+.c_teaserBlock {
+
+  overflow: hidden;
+  background: $light-gray;
+
+  &-visual,
+  &-content {
+    display: inline-block;
+    width: calc(50% - 4px);
+    vertical-align: middle;
+    box-sizing: border-box;
+  }  
+
+  &-content {
+    padding: 24px 10%;
+
+    h3 {
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: 1px;
+      font-weight: 400;
+
+      &:after {
+        content: " ";
+        display: block;
+        height: 2px;
+        width: 28px;
+        background-color: $black;
+        margin-top: 10px;
+      }
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.4;
+      margin: 0 0 30px;
+      padding: 0;
+    }
+
+    .c_teaserBlock-cta {
+      color: $black;
+      border: 2px solid $black;
+      padding: 7px 70px 7px 15px;
+      display: inline-block;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 500;
+      text-decoration: none;
     }
 
   }

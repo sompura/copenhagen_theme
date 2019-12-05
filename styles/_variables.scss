@@ -28,10 +28,15 @@ $input-font-size: 14px;
 $field-text-color: #999;
 $field-text-focus-color: #555;
 
+//BO Colors
+$light-gray: #fafafa;
+$black: #000000;
+$white: #ffffff;
+
 // Breakpoints variables
 $tablet-width: 768px;
 $desktop-width: 1024px;
-$max-width-container: 1160px;
+$max-width-container: 1440px;
 
 // Fonts
 $heading_font: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif !default;
