@@ -1255,6 +1255,22 @@ ul {
   box-sizing: border-box;
 }
 
+.c_teaserBlock-visual {
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.c_teaserBlock-visual img {
+  width: 120%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+}
+
 .c_teaserBlock-content {
   padding: 24px 10%;
 }
@@ -1964,7 +1980,7 @@ ul {
 
 .article-steps-body li > img {
   float: right;
-  max-width: 35%;
+  max-width: 45%;
   margin-top: 10px;
 }
 
@@ -1972,7 +1988,7 @@ ul {
 .article-steps-body li p,
 .article-steps-body li ul {
   float: left;
-  max-width: 60%;
+  max-width: 50%;
 }
 
 /***** Attachments *****/
@@ -4793,4 +4809,20 @@ html[lang|="zh"] .search-results-description em {
   background: $text_color;
   z-index: 100;
   opacity: 0.7;
+}
+
+.c_paralax {
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.c_paralax-image {
+  width: 120%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  pointer-events: none;
 }

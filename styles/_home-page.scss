@@ -99,7 +99,24 @@
     width: calc(50% - 4px);
     vertical-align: middle;
     box-sizing: border-box;
-  }  
+  }
+
+  &-visual {
+    
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+
+    img {      
+      width: 120%;
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%,0);
+      pointer-events: none;
+    }
+  }
 
   &-content {
     padding: 24px 10%;

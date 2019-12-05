@@ -1,0 +1,17 @@
+.c_paralax {
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+
+    &-image {        
+        width: 120%;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,0);
+        pointer-events: none;
+    }
+
+
+}
