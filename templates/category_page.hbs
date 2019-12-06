@@ -1,20 +1,22 @@
 <section class="section c_hero">
   <div class="c_hero-content"><h1>{{category.name}}</h1></div>
-  <div class="c_hero-visual">
-    <img src="{{asset 'default_item_visual.png'}}" data-image="headers_{{category.id}}" />
+  <div class="c_hero-visual">    
+    {{#is category.id 360002304491}}<img src="{{asset 'bo_header_headphones.jpg'}}" alt="{{category.name}}" />{{/is}}          
   </div>
 </section>
 
 <div class="container">
   <section class="section c_products c_products--small">
     <ul>
-      {{#each sections}}        
+      {{#each sections}}  
+        {{#isnt id 360007467251}}      
           <li class="c_products-item">
             <a href='{{url}}' class="c_products-itemLink">
               <div class="c_products-itemVisual"><img src="{{asset 'default_item_visual.png'}}" data-image="categories_sections_{{id}}" /></div>
               <h4 class="c_products-itemTitle">{{name}}</h4>              
             </a>
           </li>
+        {{/isnt}}
       {{/each}}
     </ul>
   </section>
@@ -64,6 +66,34 @@
   </div>
   -->
 </div>
+
+
+<div class="section">
+  <div class="container">
+    <!-- Headphone Category Global Article Block -->
+    {{#is category.id 360002304491}}
+      {{#each sections}}
+        {{#is id 360007467251}}
+          {{#each articles}}
+            {{#is id 360037259952}}
+              <div class="section c_teaserBlock">
+                <div class="c_teaserBlock-visual">
+                  <img src="{{asset 'bo_get_started_headphone.jpg'}}" alt="{{title}}" data-speed="1.25" class="c_paralax-image" />
+                </div>
+                <div class="c_teaserBlock-content">
+                  <h3>{{title}}</h3>
+                  <p>{{excerpt body characters=100}}</p>
+                  <a  href="{{url}}" class="c_teaserBlock-cta">{{dc 'get_started'}}</a>
+                </div>
+              </div>
+            {{/is}}
+          {{/each}}
+        {{/is}}
+      {{/each}}      
+    {{/is}}
+  </div>
+</div>
+
 
 <div class="container-divider"></div>
 

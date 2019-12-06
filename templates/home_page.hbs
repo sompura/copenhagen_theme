@@ -1,8 +1,12 @@
-<section class="section hero">
-  <div class="hero-inner">
-    <div class="hero-inner-message"> {{dc 'welcome_support_message'}}</div>
-    {{search submit=false instant=settings.instant_search class='search search-full'}}
+<section class="c_hero c_hero--home">
+  <div class="c_hero-inner">
+    <div class="c_hero-message">{{dc 'welcome_support_message'}}</div>
+    <div class="c_hero-search">
+      {{search instant=settings.instant_search class='search search-full'}}
+    </div>
   </div>
+  <img class="c_hero-image" src="{{settings.homepage_background_image}}" alt="{{dc 'welcome_support_message'}}" />
+  <div class="c_hero-overlay"></div>
 </section>
 
 <!--<div class="section c_paralax">
