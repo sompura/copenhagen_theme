@@ -1,0 +1,87 @@
+.c_contact {
+
+    h2 {
+        font-size: 30px;
+        line-height: 50px;
+        text-align: center;
+        letter-spacing: 1px;
+        color: $black;
+        margin: 48px 0;
+    }
+ 
+    .c_contact-chat,
+    .c_contact-email,
+    .c_contact-talk {
+        width: calc(33.33% - 20px);
+        min-height: 420px;
+        display: inline-block;
+        vertical-align: top;
+        background: $light-gray;
+        margin-left: 24px;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 48px 60px;
+    }
+
+    .c_contact-chat {
+        margin-left: 0;
+    }
+
+    .c_contact-icon {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        border: 1px solid $black;
+        text-align: center;        
+        display: inline-block;
+        position: relative;
+        margin-bottom: 45px;
+
+        img {
+            max-width: 60px;
+            max-height: 60px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    }
+
+    .c_contact-content {
+        
+        h3 {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;            
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: $black;
+            margin-bottom: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 26px;            
+            letter-spacing: 0.4px;
+            color: $gray;
+            margin-bottom: 32px;
+        }
+
+    }
+
+    .c_contact-cta {
+
+        .c_contact-ctaLink {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;            
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: $black;
+            text-decoration: none;
+        }
+
+    }
+
+}

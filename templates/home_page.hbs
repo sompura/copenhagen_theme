@@ -23,7 +23,7 @@
               {{#isnt id 360002304531}}
                 {{#isnt id 360002304551}}
                   <li class="c_products-item">
-                    <a href='{{url}}' class="c_products-itemLink">
+                    <a href='{{url}}' class="c_products-itemLink" data-id="{{id}}">
                       <div class="c_products-itemVisual">
                         {{#is id 360002296932}}<img src="{{asset 'bo_speakers.png'}}" alt="{{name}}" />{{/is}}
                         {{#is id 360002304491}}<img src="{{asset 'bo_headphones.png'}}" alt="{{name}}" />{{/is}}
@@ -68,27 +68,40 @@
       {{/each}}
     {{/is}}
   {{/each}}
-    
-  <!--{{#if promoted_articles}}
-    <section class="articles">
-      <h3>{{t 'promoted_articles'}}</h3>
-      <ul class="article-list promoted-articles">
-        {{#each promoted_articles}}
-          <li class="promoted-articles-item">
-              <a href="{{url}}">
-                {{title}}
+  
+  <section class="section c_contact">
+    <h2>{{dc 'hp_we_are_here'}}</h2>
+    <div class="c_contact-chat">
+      <div class="c_contact-icon"><img src="{{asset 'ico_instant_chat.svg'}}" alt="{{dc 'contact_chat_cta'}}" /></div>
+      <div class="c_contact-content">
+        {{dc 'contact_chat'}}
+      </div>        
+      <div class="c_contact-cta">
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_chat_cta'}}</a>
+      </div>        
+    </div>
+    <div class="c_contact-email">
+      <div class="c_contact-icon"><img src="{{asset 'ico_send_email.svg'}}" alt="{{dc 'contact_email_cta'}}" /></div>
+      <div class="c_contact-content">
+        {{dc 'contact_email'}}
+      </div>        
+      <div class="c_contact-cta">
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_email_cta'}}</a>
+      </div>        
+    </div>
+    <div class="c_contact-talk">
+      <div class="c_contact-icon"><img src="{{asset 'ico_talk.svg'}}" alt="{{dc 'contact_talk_cta'}}" /></div>
+      <div class="c_contact-content">
+        {{dc 'contact_talk'}}
+      </div>        
+      <div class="c_contact-cta">
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_talk_cta'}}</a>
+      </div>        
+    </div>
+  </section>
 
-                {{#if internal}}
-                  <span class="icon-lock" title="{{t 'internal'}}"></span>
-                {{/if}}
-              </a>
-          </li>
-        {{/each}}
-      </ul>
-    </section>
-  {{/if}}-->
-
-  {{#if help_center.community_enabled}}
+  <!--
+    {{#if help_center.community_enabled}}
     <section class="section home-section community">
       <h2>{{t 'community'}}</h2>
       {{#link 'community' class='community-link'}}
@@ -107,12 +120,9 @@
 
 </div>
 
-<div class="section">
-  <div class="container">
-    {{dc 'custom_content_primary'}}
-  </div>
-</div>
+-->
 
+<!-- modal box sample
 <div class="section">
   <div class="container">
     <a href="#" class="modalTrigger" data-modal="c_modal-message">Modal box</a>
@@ -132,6 +142,7 @@
   </div>
 </div>
 <div class="c_modal-backdrop"></div>
+-->
 
 <script type="text/javascript">
   window.BO_settings = {

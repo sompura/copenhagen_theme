@@ -14,11 +14,8 @@
   overflow: hidden;
   margin-bottom: 60px;
 
-  &--home {
-    height: 500px;
-  }
-
   &-image {
+    min-width: 100%;
     min-height: 500px;
     position: relative;
     top: 0;
@@ -26,6 +23,22 @@
     transform: translateX(-50%);
     z-index: 1;
   }
+
+  &--home {
+    height: 500px;
+  }
+
+  &--inner {
+    height: auto;
+
+    .c_hero-image {
+      min-height: 400px;
+      display: block;
+    }
+
+  }
+
+  
 
   &-overlay {
     position: absolute;

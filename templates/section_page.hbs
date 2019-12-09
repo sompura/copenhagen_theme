@@ -1,15 +1,21 @@
-<div class="container-divider"></div>
+<section class="c_hero c_hero--inner">
+  <div class="c_hero-inner">
+    <div class="c_hero-message">{{section.name}}</div>    
+  </div>
+  {{#is section.id 360007332792}}<img class="c_hero-image" src="{{asset 'bo_header_headphones_e8.jpg'}}" alt="{{section.name}}" />{{/is}}            
+  <div class="c_hero-overlay"></div>
+</section>
+
 <div class="container">
 
-  <header class="page-header">
-    <h1>{{section.name}}</h1>
+  <!--<header class="page-header">
     {{#if settings.show_follow_section}}
       {{subscribe}}
     {{/if}}
     {{#if section.description}}
       <p class="page-header-description">{{section.description}}</p>
     {{/if}}
-  </header>
+  </header>-->
 
   {{#if section.articles}}
   <div class="c_promoted-articles">
@@ -29,7 +35,6 @@
 
 </div>
 
-<div class="container-divider"></div>
 <div class="container">
 
   <div class="section-container">
@@ -53,13 +58,10 @@
 </div>
 
 <div class="container">
-  {{search scoped=true submit=false}}
+  {{search scoped=false submit=false}}
 </div>
 
-<div class="container-divider"></div>
-
-<div class="container">     
-
+<div class="container">    
       {{#if section.sections}}
         <ul class="section-list section-list--collapsed">
           {{#each section.sections}}
@@ -77,11 +79,34 @@
       {{/if}}
 </div>
 
-<div class="container-divider"></div>
-
-<div class="container"> 
-  <nav class="sub-nav">
-    <!--{{breadcrumbs}}-->
-    {{search submit=false}}
-  </nav>
+<div class="container">
+  <section class="section c_contact">
+      <div class="c_contact-chat">
+        <div class="c_contact-icon"><img src="{{asset 'ico_instant_chat.svg'}}" alt="{{dc 'contact_chat_cta'}}" /></div>
+        <div class="c_contact-content">
+          {{dc 'contact_chat'}}
+        </div>        
+        <div class="c_contact-cta">
+          <a href="#" class="c_contact-ctaLink">{{dc 'contact_chat_cta'}}</a>
+        </div>        
+      </div>
+      <div class="c_contact-email">
+        <div class="c_contact-icon"><img src="{{asset 'ico_send_email.svg'}}" alt="{{dc 'contact_email_cta'}}" /></div>
+        <div class="c_contact-content">
+          {{dc 'contact_email'}}
+        </div>        
+        <div class="c_contact-cta">
+          <a href="#" class="c_contact-ctaLink">{{dc 'contact_email_cta'}}</a>
+        </div>        
+      </div>
+      <div class="c_contact-talk">
+        <div class="c_contact-icon"><img src="{{asset 'ico_talk.svg'}}" alt="{{dc 'contact_talk_cta'}}" /></div>
+        <div class="c_contact-content">
+          {{dc 'contact_talk'}}
+        </div>        
+        <div class="c_contact-cta">
+          <a href="#" class="c_contact-ctaLink">{{dc 'contact_talk_cta'}}</a>
+        </div>        
+      </div>
+    </section>
 </div>

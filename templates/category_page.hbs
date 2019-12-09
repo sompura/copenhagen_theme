@@ -1,12 +1,13 @@
-<section class="section c_hero">
-  <div class="c_hero-content"><h1>{{category.name}}</h1></div>
-  <div class="c_hero-visual">    
-    {{#is category.id 360002304491}}<img src="{{asset 'bo_header_headphones.jpg'}}" alt="{{category.name}}" />{{/is}}          
+<section class="c_hero c_hero--inner">
+  <div class="c_hero-inner">
+    <div class="c_hero-message">{{dc 'headphone_category_title'}}</div>    
   </div>
+  {{#is category.id 360002304491}}<img class="c_hero-image" src="{{asset 'bo_header_headphones.jpg'}}" alt="{{category.name}}" />{{/is}}            
+  <div class="c_hero-overlay"></div>
 </section>
 
 <div class="container">
-  <section class="section c_products c_products--small">
+  <section class="section c_products">
     <ul>
       {{#each sections}}  
         {{#isnt id 360007467251}}      
@@ -92,6 +93,38 @@
       {{/each}}      
     {{/is}}
   </div>
+</div>
+
+<div class="container">
+  <section class="section c_contact">
+      <div class="c_contact-chat">
+        <div class="c_contact-icon"><img src="{{asset 'ico_instant_chat.svg'}}" alt="{{dc 'contact_chat_cta'}}" /></div>
+        <div class="c_contact-content">
+          {{dc 'contact_chat'}}
+        </div>        
+        <div class="c_contact-cta">
+          <a href="#" class="c_contact-ctaLink">{{dc 'contact_chat_cta'}}</a>
+        </div>        
+      </div>
+      <div class="c_contact-email">
+        <div class="c_contact-icon"><img src="{{asset 'ico_send_email.svg'}}" alt="{{dc 'contact_email_cta'}}" /></div>
+        <div class="c_contact-content">
+          {{dc 'contact_email'}}
+        </div>        
+        <div class="c_contact-cta">
+          <a href="#" class="c_contact-ctaLink">{{dc 'contact_email_cta'}}</a>
+        </div>        
+      </div>
+      <div class="c_contact-talk">
+        <div class="c_contact-icon"><img src="{{asset 'ico_talk.svg'}}" alt="{{dc 'contact_talk_cta'}}" /></div>
+        <div class="c_contact-content">
+          {{dc 'contact_talk'}}
+        </div>        
+        <div class="c_contact-cta">
+          <a href="#" class="c_contact-ctaLink">{{dc 'contact_talk_cta'}}</a>
+        </div>        
+      </div>
+    </section>
 </div>
 
 
