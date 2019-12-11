@@ -1,0 +1,68 @@
+.c_custom-article {
+
+    &.c_custom-article--userguide {
+
+        .c_custom-article-content {
+
+            h1,
+            p {
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }            
+
+            h1 {
+                font-size: 40px;
+                line-height: 48px;
+                letter-spacing: 1px;
+                color: $black;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                font-size: 32px;
+                line-height: 40px;
+                letter-spacing: 1px;
+                color: $black;
+                margin-bottom: 20px;
+                font-weight: 500;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 26px;
+                letter-spacing: 0.4px;
+                color: $dark-gray;
+                margin-bottom: 24px;
+            }
+
+            ol {
+                margin: 0 0 48px 0;
+                padding: 0;
+
+                li {
+                    list-style: none;
+                    width: calc(25% - 4px);
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-bottom: 15px;
+
+                    a {
+                        color: $dark-gray;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: $black;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+            }
+            
+
+        }
+
+    }
+
+}

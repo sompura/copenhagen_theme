@@ -233,7 +233,7 @@ var BO_JS = {
     this._setProductsSection();
     this._setVideoResponsive();   
     this._setParalax(); 
-    this._fetchUserGuideArticles();
+    //this._fetchUserGuideArticles();
     //this._fetchCategories();
     //this._fetchGlobalArticles();
     this._bindEvents();
@@ -364,7 +364,7 @@ var BO_JS = {
         });
 
         console.log(self.userManualSectionArticles);
-        
+
       }
     });    
     

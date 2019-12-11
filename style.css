@@ -4974,3 +4974,58 @@ html[lang|="zh"] .search-results-description em {
   color: #000000;
   text-decoration: none;
 }
+
+.c_custom-article.c_custom-article--userguide .c_custom-article-content h1,
+.c_custom-article.c_custom-article--userguide .c_custom-article-content p {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c_custom-article.c_custom-article--userguide .c_custom-article-content h1 {
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 1px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.c_custom-article.c_custom-article--userguide .c_custom-article-content h2 {
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 1px;
+  color: #000000;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.c_custom-article.c_custom-article--userguide .c_custom-article-content p {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.4px;
+  color: #737373;
+  margin-bottom: 24px;
+}
+
+.c_custom-article.c_custom-article--userguide .c_custom-article-content ol {
+  margin: 0 0 48px 0;
+  padding: 0;
+}
+
+.c_custom-article.c_custom-article--userguide .c_custom-article-content ol li {
+  list-style: none;
+  width: calc(25% - 4px);
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 15px;
+}
+
+.c_custom-article.c_custom-article--userguide .c_custom-article-content ol li a {
+  color: #737373;
+  text-decoration: none;
+}
+
+.c_custom-article.c_custom-article--userguide .c_custom-article-content ol li a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
