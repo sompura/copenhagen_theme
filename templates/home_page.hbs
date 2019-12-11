@@ -22,21 +22,23 @@
             {{#isnt id 360002304511}}
               {{#isnt id 360002304531}}
                 {{#isnt id 360002304551}}
-                  <li class="c_products-item">
-                    <a href='{{url}}' class="c_products-itemLink" data-id="{{id}}">
-                      <div class="c_products-itemVisual">
-                        {{#is id 360002296932}}<img src="{{asset 'bo_speakers.png'}}" alt="{{name}}" />{{/is}}
-                        {{#is id 360002304491}}<img src="{{asset 'bo_headphones.png'}}" alt="{{name}}" />{{/is}}
-                        {{#is id 360002296952}}<img src="{{asset 'bo_televisions.png'}}" alt="{{name}}" />{{/is}}
-                        {{#is id 360002296952}}<img src="{{asset 'bo_televisions.png'}}" alt="{{name}}" />{{/is}}
-                        {{#is id 360002384932}}<img src="{{asset 'bo_accessories.png'}}" alt="{{name}}" />{{/is}}
-                        {{#is id 360002384932}}<img src="{{asset 'bo_accessories.png'}}" alt="{{name}}" />{{/is}}
-                        {{#is id 360002405932}}<img src="{{asset 'bo_apps.png'}}" alt="{{name}}" />{{/is}}
-                        {{#is id 360002413751}}<img src="{{asset 'bo_others.png'}}" alt="{{name}}" />{{/is}}
-                      </div>
-                      <h4 class="c_products-itemTitle">{{name}}</h4>              
-                    </a>
-                  </li>
+                  {{#isnt id 360002430331}}
+                    <li class="c_products-item">
+                      <a href='{{url}}' class="c_products-itemLink" data-id="{{id}}">
+                        <div class="c_products-itemVisual">
+                          {{#is id 360002296932}}<img src="{{asset 'bo_speakers.png'}}" alt="{{name}}" />{{/is}}
+                          {{#is id 360002304491}}<img src="{{asset 'bo_headphones.png'}}" alt="{{name}}" />{{/is}}
+                          {{#is id 360002296952}}<img src="{{asset 'bo_televisions.png'}}" alt="{{name}}" />{{/is}}
+                          {{#is id 360002296952}}<img src="{{asset 'bo_televisions.png'}}" alt="{{name}}" />{{/is}}
+                          {{#is id 360002384932}}<img src="{{asset 'bo_accessories.png'}}" alt="{{name}}" />{{/is}}
+                          {{#is id 360002384932}}<img src="{{asset 'bo_accessories.png'}}" alt="{{name}}" />{{/is}}
+                          {{#is id 360002405932}}<img src="{{asset 'bo_apps.png'}}" alt="{{name}}" />{{/is}}
+                          {{#is id 360002413751}}<img src="{{asset 'bo_others.png'}}" alt="{{name}}" />{{/is}}
+                        </div>
+                        <h4 class="c_products-itemTitle">{{name}}</h4>              
+                      </a>
+                    </li>
+                  {{/isnt}}
                 {{/isnt}}
               {{/isnt}}  
             {{/isnt}}

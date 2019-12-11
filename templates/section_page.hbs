@@ -32,11 +32,9 @@
     </ul>
   </div>
   {{/if}}
-
 </div>
 
 <div class="container">
-
   <div class="section-container">
     <section class="section-content">
       {{#if section.articles}}
@@ -50,9 +48,7 @@
           {{/each}}
         </ul>      
       {{/if}}
-
       {{pagination}}
-
     </section>
   </div>
 </div>
@@ -62,21 +58,33 @@
 </div>
 
 <div class="container">    
-      {{#if section.sections}}
-        <ul class="section-list section-list--collapsed">
-          {{#each section.sections}}
-          <li class="section-list-item">
-              <a href="{{url}}">
-                <span>{{name}}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" aria-hidden="true">
-                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 14.5l6.1-6.1c.2-.2.2-.5 0-.7L5 1.5"/>
-                </svg>
-              </a>
-            </li>
-          {{/each}}
-          <a tabindex="0" class="see-all-sections-trigger" aria-hidden="true" id="see-all-sections-trigger" title="{{t 'see_all_sections'}}">{{t 'see_all_sections'}}</a>
-        </ul>
-      {{/if}}
+    {{#if section.sections}}
+      <ul class="section-list">
+        {{#each section.sections}}
+        <li class="section-list-item">
+            <a href="{{url}}">
+              <span>{{name}}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" aria-hidden="true">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 14.5l6.1-6.1c.2-.2.2-.5 0-.7L5 1.5"/>
+              </svg>
+            </a>
+          </li>
+        {{/each}}          
+      </ul>
+    {{/if}}
+</div>
+
+<div class="container">
+  <div class="section c_teaserBlock">
+    <div class="c_teaserBlock-visual">
+      {{#is section.id 360007332792}}<img class="c_hero-image" src="{{asset 'bo_get_started_headphone.jpg'}}" alt="{{section.name}}" />{{/is}}
+    </div>
+    <div class="c_teaserBlock-content">
+      <h3>User guides and software updates</h3>
+      <p>If you misplaced the quick start guide included in the box, you can download this as well as the complete guide for your {{section.name}}. You will also find a download link for the software updater if you prefer to update using your computer instead of the Bang &amp; Olufsen app.</p>      
+      {{#is section.id 360007332792}}<a  href="{{help_center.url}}/articles/360037735551" class="c_teaserBlock-cta">{{section.name}} Downloads</a>{{/is}}
+    </div>
+  </div>
 </div>
 
 <div class="container">
