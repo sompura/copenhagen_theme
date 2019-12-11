@@ -233,6 +233,7 @@ var BO_JS = {
     this._setProductsSection();
     this._setVideoResponsive();   
     this._setParalax(); 
+    this._fetchUserGuideArticles();
     //this._fetchCategories();
     //this._fetchGlobalArticles();
     this._bindEvents();
@@ -330,6 +331,49 @@ var BO_JS = {
     });
 
   });
+
+  },
+
+  _fetchUserGuideArticles: function() {
+
+    var self = this; 
+
+    this.userManualSections = [];
+    this.userManualSectionArticles = [];
+    
+    $.ajax({
+      url: "/api/v2/help_center/" + self.locale.toLowerCase() +"/categories/360002430331/sections.json",      
+      success: function(data){
+        console.log(data.sections);   
+        $.each(data.sections, function(index, el) {          
+          self.userManualSections.push(el.id);
+        });
+        console.log(self.userManualSections);  
+        
+        $.each(self.userManualSections, function(index, el) {
+          $.ajax({
+            url: "/api/v2/help_center/" + self.locale.toLowerCase() +"/sections/" + el + "/articles.json?per_page=60",      
+            success: function(data){
+              var sectionArticles = {
+                "section": el,
+                "articles" : data
+              }
+              self.userManualSectionArticles.push(sectionArticles);              
+            }
+          });
+        });
+
+        console.log(self.userManualSectionArticles);
+        
+      }
+    });    
+    
+    /*$.ajax({
+      url: "/api/v2/help_center/" + self.locale.toLowerCase() +"/sections/360007501511/articles.json?per_page=60",      
+      success: function(data){
+        console.log(data);        
+      }
+    });*/
 
   },
 
