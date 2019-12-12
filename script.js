@@ -215,11 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var BO_JS = {
 
-  init: function(){
-    
-    console.log('BO_JS initiated');
-
-    this.globalSettings = window.BO_settings;
+  init: function(){    
 
     this.locale = $('html').attr('lang');
     this.$articleVotesContainer = $('.article-votes');
@@ -228,7 +224,11 @@ var BO_JS = {
     this.$modalBackdrop = $('.c_modal-backdrop');
     this.$modalClose = $('.c_modal-close');
     this.$productsContainer = $('.c_products');
+    this.$supportContainer = $('.c_support');
     this.$heroHeaderContainer = $('.c_hero');
+    this.$headerMenuTrigger = $('.c_header-menu');
+    this.$headerCloseTrigger = $('.c_header-close');
+    this.$headerNavigation = $('.c_header-navigation');
 
     this._setProductsSection();
     this._setVideoResponsive();   
@@ -261,6 +261,10 @@ var BO_JS = {
     var productContainerWidth = this.$productsContainer.find('.c_products-itemVisual').width();
     this.$productsContainer.find('.c_products-itemVisual').height(productContainerWidth);
 
+    //update support section height
+    var supportContainerWidth = this.$supportContainer.find('.c_support-item').width();
+    this.$supportContainer.find('.c_support-item').height(supportContainerWidth);
+
   },
 
   _setProductsSection: function() {
@@ -269,21 +273,9 @@ var BO_JS = {
     var productContainerWidth = this.$productsContainer.find('.c_products-itemVisual').width();
     this.$productsContainer.find('.c_products-itemVisual').height(productContainerWidth);
 
-    //replace placeholder image
-    var productImages = this.$productsContainer.find('.c_products-itemVisual > img');    
-    productImages.each(function(index, image) {                  
-      var visualDynamicImage = "{{asset '" + $(image).attr("data-image") + ".png'}}";        
-      var visualImage = $(image).attr("src").substring(0, $(image).attr("src").lastIndexOf("/")+1) + $(image).attr("data-image") + ".png";
-      //$(image).attr("src", visualDynamicImage);
-    }.bind(this));
-
-    //replace hero header image
-    var heroHeaderImages = this.$heroHeaderContainer.find('.c_hero-visual > img');    
-    heroHeaderImages.each(function(index, image) {            
-      var visualDynamicImage = "{{asset '" + $(image).attr("data-image") + ".png'}}";        
-      var visualImage = $(image).attr("src").substring(0, $(image).attr("src").lastIndexOf("/")+1) + $(image).attr("data-image") + ".jpg";
-      //$(image).attr("src", visualDynamicImage);
-    }.bind(this));
+    //update support section height
+    var supportContainerWidth = this.$supportContainer.find('.c_support-item').width();
+    this.$supportContainer.find('.c_support-item').height(supportContainerWidth);
 
   },
 
@@ -468,6 +460,34 @@ var BO_JS = {
     this.$modalClose.on('click', function() {
       self.$modalBackdrop.hide();
       $('.c_modal').fadeOut(300);
+    });
+
+    this.$productsContainer.find('.c_products-itemLink--disabled').on('click', function(e) {
+      e.preventDefault();
+      var modal = $(this).attr('data-modal');
+      self.$modalBackdrop.show();
+      $('#' + modal).fadeIn(500);  
+    });
+
+    this.$headerNavigation.find('.c_header-navigation--disabled').on('click', function(e) {
+      e.preventDefault();
+      var modal = $(this).attr('data-modal');
+      self.$modalBackdrop.show();
+      $('#' + modal).fadeIn(500);  
+    });
+
+    this.$headerMenuTrigger.on('click', function(e) {
+      e.preventDefault();
+      $(this).addClass('c_header-menu--hidden');
+      self.$headerCloseTrigger.addClass('c_header-close--visible');
+      self.$headerNavigation.addClass('c_header-navigation--open');
+    });
+
+    this.$headerCloseTrigger.on('click', function(e) {
+      e.preventDefault();
+      self.$headerMenuTrigger.removeClass('c_header-menu--hidden');
+      self.$headerCloseTrigger.removeClass('c_header-close--visible');
+      self.$headerNavigation.removeClass('c_header-navigation--open');
     });
 
   }

@@ -12,9 +12,14 @@ body {
   font-weight: $font-weight-base;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  padding-top: 63px;
+
+  @include desktop {
+    padding-top: 0;
+  }
 
   > main {
-    @include desktop {
+    @include desktop {      
       min-height: 65vh;
     }
   }

@@ -1,75 +1,33 @@
 <header class="c_header">
   <div class="c_header-branding">
-    <div class="c_header-backToMainSite">
-      <a hre="https://www.bang-olufsen.com">&lt; MAIN SITE</a>
+    <div class="c_header-menu">
+      <a href="#"><img src="{{asset 'ico-menu.svg'}}" alt="" /></a>
     </div>
-    <!--<div class="c_header-menuTrigger">      
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" focusable="false" viewBox="0 0 16 16">
-        <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13"/>
-      </svg>
-    </div>-->
-    <div class="c_header-logo">
-      {{#link 'help_center'}}
-        <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}"><span>SUPPORT</span>
-      {{/link}}
+    <div class="c_header-close">
+      <a href="#"><img src="{{asset 'ico-close.svg'}}" alt="" /></a>
     </div>
-    <div class="c_header-userNavigation">
-      <ul>
-        <!--<li>
-          <a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
-              <defs>
-                  <path id="a" d="M2 0l2 10h12l2-10h2v12H0V0z"/>
-                  <path id="c" d="M0 0h20v6H0z"/>
-              </defs>
-              <g fill="none" fill-rule="evenodd">
-                  <g transform="translate(0 8)">
-                      <mask id="b" fill="#fff">
-                          <use xlink:href="#a"/>
-                      </mask>
-                      <path fill-rule="nonzero" stroke="#000" stroke-width="2" d="M1.18 1l1.667 10h14.306L18.82 1H1.18z" mask="url(#b)"/>
-                  </g>
-                  <mask id="d" fill="#fff">
-                      <use xlink:href="#c"/>
-                  </mask>
-                  <circle cx="10" cy="6" r="5" fill-rule="nonzero" stroke="#000" stroke-width="2" mask="url(#d)"/>
-              </g>
-            </svg>
-          </a>
-        </li>-->        
-        <li>{{link 'community'}} {{link 'new_request' class='submit-a-request'}}</li>
-        <li>{{user_info}}</li>
-      </ul>      
+    <div class="c_header-cta">    
+      <a href="https://www.bang-olufsen.com"><img src="{{asset 'arrow-back.svg'}}" alt="bang-olufsen.com" /> bang-olufsen.com</a>
+    </div>
+    <div class="c_header-logo">    
+        {{#link 'help_center'}}
+          <img src="{{asset 'logo.svg'}}" alt="{{t 'home_page' name=help_center.name}}" /><span>Support</span>
+        {{/link}}
     </div>
   </div>
-  <div class="c_header-navigation">
+  <div class="c_header-navigation">    
     <ul>      
-      <li><a href="https://www.bang-olufsen.com/en/speakers">Speakers</a></li>
-      <li><a href="https://www.bang-olufsen.com/en/headphones">Headphones</a></li>
-      <li><a href="https://www.bang-olufsen.com/en/televisions">Televisions</a></li>
-      <li><a href="https://www.bang-olufsen.com/en/accessories">Accessories</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Library</a></li>
+      <li class="c_header-mobileOnly">
+        {{search instant=settings.instant_search submit=false class='search search-full search-mobile'}}
+      </li>
+      <li><a href="#" data-modal="c_modal-message" class="c_header-navigation--disabled">Speakers</a></li>
+      <li><a href="{{help_center.url}}/categories/360002304491">Headphones</a></li>
+      <li><a href="#" data-modal="c_modal-message" class="c_header-navigation--disabled">Televisions</a></li>
+      <li><a href="#" data-modal="c_modal-message" class="c_header-navigation--disabled">Accessories</a></li>
+      <li><a href="#" data-modal="c_modal-message" class="c_header-navigation--disabled">App</a></li>
+      <li><a href="#" data-modal="c_modal-message" class="c_header-navigation--disabled">Other</a></li>
+      <li class="c_header-desktopOnly"><a href="#" class="c_header-search"><img src="{{asset 'ico-search.svg'}}" /></a></li>
+      <li class="c_header-mobileOnly"><a href="https://www.bang-olufsen.com">bang-olufsen.com</a></li>
     </ul>
   </div>
 </header>
-
-<!--<header class="header">
-  <div class="logo">
-    {{#link 'help_center'}}
-      <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}">
-    {{/link}}
-  </div>
-  <div class="nav-wrapper">
-    <button class="menu-button" aria-controls="user-nav" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-menu">
-        <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13"/>
-      </svg>
-    </button>
-    <nav class="user-nav" id="user-nav">
-      {{link 'community'}}
-      {{link 'new_request' class='submit-a-request'}}
-    </nav>
-    {{user_info}}
-  </div>
-</header>-->

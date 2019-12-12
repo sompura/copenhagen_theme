@@ -2,7 +2,7 @@
   <div class="c_hero-inner">
     <div class="c_hero-message">{{dc 'welcome_support_message'}}</div>
     <div class="c_hero-search">
-      {{search instant=settings.instant_search class='search search-full'}}
+      {{search submit=false instant=settings.instant_search class='search search-full'}}
     </div>
   </div>
   <img class="c_hero-image" src="{{settings.homepage_background_image}}" alt="{{dc 'welcome_support_message'}}" />
@@ -14,7 +14,7 @@
 </div>-->
 
 <div class="container">
-  <section class="section c_products">
+  <section class="c_products">
     <ul>
       {{#each categories}}
         {{#if ../has_multiple_categories}}
@@ -24,19 +24,54 @@
                 {{#isnt id 360002304551}}
                   {{#isnt id 360002430331}}
                     <li class="c_products-item">
-                      <a href='{{url}}' class="c_products-itemLink" data-id="{{id}}">
-                        <div class="c_products-itemVisual">
-                          {{#is id 360002296932}}<img src="{{asset 'bo_speakers.png'}}" alt="{{name}}" />{{/is}}
-                          {{#is id 360002304491}}<img src="{{asset 'bo_headphones.png'}}" alt="{{name}}" />{{/is}}
-                          {{#is id 360002296952}}<img src="{{asset 'bo_televisions.png'}}" alt="{{name}}" />{{/is}}
-                          {{#is id 360002296952}}<img src="{{asset 'bo_televisions.png'}}" alt="{{name}}" />{{/is}}
-                          {{#is id 360002384932}}<img src="{{asset 'bo_accessories.png'}}" alt="{{name}}" />{{/is}}
-                          {{#is id 360002384932}}<img src="{{asset 'bo_accessories.png'}}" alt="{{name}}" />{{/is}}
-                          {{#is id 360002405932}}<img src="{{asset 'bo_apps.png'}}" alt="{{name}}" />{{/is}}
-                          {{#is id 360002413751}}<img src="{{asset 'bo_others.png'}}" alt="{{name}}" />{{/is}}
-                        </div>
-                        <h4 class="c_products-itemTitle">{{name}}</h4>              
-                      </a>
+                      {{#is id 360002296932}}
+                        <a href='#' class="c_products-itemLink c_products-itemLink--disabled" data-modal="c_modal-message" data-id="{{id}}">
+                          <div class="c_products-itemVisual">
+                            <img src="{{asset 'bo_speakers.png'}}" alt="{{name}}" />
+                          </div>
+                          <h4 class="c_products-itemTitle">{{name}}</h4> 
+                        </a>
+                      {{/is}}
+                      {{#is id 360002296952}}
+                        <a href='#' class="c_products-itemLink c_products-itemLink--disabled" data-modal="c_modal-message" data-id="{{id}}">
+                          <div class="c_products-itemVisual">
+                            <img src="{{asset 'bo_televisions.png'}}" alt="{{name}}" />
+                          </div>
+                          <h4 class="c_products-itemTitle">{{name}}</h4> 
+                        </a>
+                      {{/is}}
+                      {{#is id 360002304491}}
+                        <a href='{{url}}' class="c_products-itemLink" data-id="{{id}}">
+                          <div class="c_products-itemVisual">
+                            <img src="{{asset 'bo_headphones.png'}}" alt="{{name}}" />
+                          </div>
+                          <h4 class="c_products-itemTitle">{{name}}</h4> 
+                        </a>
+                      {{/is}}
+                      {{#is id 360002384932}}
+                        <a href='#' class="c_products-itemLink c_products-itemLink--disabled" data-modal="c_modal-message" data-id="{{id}}">
+                          <div class="c_products-itemVisual">
+                            <img src="{{asset 'bo_accessories.png'}}" alt="{{name}}" />
+                          </div>
+                          <h4 class="c_products-itemTitle">{{name}}</h4> 
+                        </a>
+                      {{/is}}
+                      {{#is id 360002405932}}
+                        <a href='#' class="c_products-itemLink c_products-itemLink--disabled" data-modal="c_modal-message" data-id="{{id}}">
+                          <div class="c_products-itemVisual">
+                            <img src="{{asset 'bo_apps.png'}}" alt="{{name}}" />
+                          </div>
+                          <h4 class="c_products-itemTitle">{{name}}</h4> 
+                        </a>
+                      {{/is}}
+                      {{#is id 360002413751}}
+                        <a href='#' class="c_products-itemLink c_products-itemLink--disabled" data-modal="c_modal-message" data-id="{{id}}">
+                          <div class="c_products-itemVisual">
+                            <img src="{{asset 'bo_others.png'}}" alt="{{name}}" />
+                          </div>
+                          <h4 class="c_products-itemTitle">{{name}}</h4> 
+                        </a>
+                      {{/is}}                      
                     </li>
                   {{/isnt}}
                 {{/isnt}}
@@ -54,15 +89,16 @@
         {{#is id 360007112072}}
           {{#each articles}}
             {{#is id 360037095852}}
-              <div class="section c_teaserBlock">
+              <div class="c_teaserBlock">
                 <div class="c_teaserBlock-visual">
-                  <img src="{{asset 'bo_setup_customize.jpg'}}" alt="{{title}}" data-speed="1.25" class="c_paralax-image" />
+                  <img src="{{asset 'bo_setup_customize.jpg'}}" alt="{{title}}" data-speed="1.25" class="c_paralax-image" />                  
                 </div>
                 <div class="c_teaserBlock-content">
                   <h3>{{title}}</h3>
                   <p>{{excerpt body characters=100}}</p>
-                  <a  href="{{url}}" class="c_teaserBlock-cta">{{dc 'get_started'}}</a>
+                  <a  href="{{url}}" class="c_teaserBlock-cta">{{dc 'get_started'}} <img src="{{asset 'arrow-forward.svg'}}" alt="{{dc 'get_started'}}" /></a>
                 </div>
+                <div class="c_teaserBlock-overlay"></div>
               </div>
             {{/is}}
           {{/each}}
@@ -71,7 +107,7 @@
     {{/is}}
   {{/each}}
   
-  <section class="section c_contact">
+  <section class="c_contact">
     <h2>{{dc 'hp_we_are_here'}}</h2>
     <div class="c_contact-chat">
       <div class="c_contact-icon"><img src="{{asset 'ico_instant_chat.svg'}}" alt="{{dc 'contact_chat_cta'}}" /></div>
@@ -79,7 +115,7 @@
         {{dc 'contact_chat'}}
       </div>        
       <div class="c_contact-cta">
-        <a href="#" class="c_contact-ctaLink">{{dc 'contact_chat_cta'}}</a>
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_chat_cta'}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="{{dc 'contact_chat_cta'}}" /></a>
       </div>        
     </div>
     <div class="c_contact-email">
@@ -88,7 +124,7 @@
         {{dc 'contact_email'}}
       </div>        
       <div class="c_contact-cta">
-        <a href="#" class="c_contact-ctaLink">{{dc 'contact_email_cta'}}</a>
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_email_cta'}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="{{dc 'contact_email_cta'}}" /></a>
       </div>        
     </div>
     <div class="c_contact-talk">
@@ -97,57 +133,64 @@
         {{dc 'contact_talk'}}
       </div>        
       <div class="c_contact-cta">
-        <a href="#" class="c_contact-ctaLink">{{dc 'contact_talk_cta'}}</a>
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_talk_cta'}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="{{dc 'contact_talk_cta'}}" /></a>
       </div>        
     </div>
   </section>
 
-  <!--
-    {{#if help_center.community_enabled}}
-    <section class="section home-section community">
-      <h2>{{t 'community'}}</h2>
-      {{#link 'community' class='community-link'}}
-        {{t 'join_conversation'}}
-      {{/link}}
-
-      <div class="community-image"></div>
-    </section>
-  {{/if}}
-
-  {{#if settings.show_recent_activity}}
-    <section class="section home-section activity">    
-      {{recent_activity}}    
-    </section>
-  {{/if}}
+  <section class="c_support">
+    <div class="c_support-item">
+      <a href="#">
+        <div class="c_support-itemVisual">
+          <img src="{{asset 'bo_register_product.jpg'}}" alt="" />
+        </div>
+        <div class="c_support-itemContent">
+          Register your product
+        </div>
+        <div class="c_suppoprt-itemCTA">
+          Register Product <img src="{{asset 'arrow-forward.svg'}}" alt="" />
+        </div>
+      </a>
+    </div>
+    <div class="c_support-item">
+      <a href="#">
+        <div class="c_support-itemVisual">
+          <img src="{{asset 'bo_warranty_service.jpg'}}" alt="" />
+        </div>
+        <div class="c_support-itemContent">
+          We provide full coverage with B&amp;O specialist repairs and replacements
+        </div>
+        <div class="c_suppoprt-itemCTA">
+          Warranty service <img src="{{asset 'arrow-forward.svg'}}" alt="" />
+        </div>
+      </a>
+    </div>
+    <div class="c_support-item">
+      <a href="#">
+        <div class="c_support-itemVisual">
+          <img src="{{asset 'bo_track_repair.jpg'}}" alt="" />
+        </div>
+        <div class="c_support-itemContent">
+          Want to check the status of your warranty repair?
+        </div>
+        <div class="c_suppoprt-itemCTA">
+          Track repair <img src="{{asset 'arrow-forward.svg'}}" alt="" />
+        </div>
+      </a>
+    </div>
+    <div class="c_support-item">
+      <a href="#">
+        <div class="c_support-itemVisual">
+          <img src="{{asset 'bo_return_order.jpg'}}" alt="" />
+        </div>
+        <div class="c_support-itemContent">
+          Return your product within 30 days of purchase for a full refund.
+        </div>
+        <div class="c_suppoprt-itemCTA">
+          Return order <img src="{{asset 'arrow-forward.svg'}}" alt="" />
+        </div>
+      </a>
+    </div>
+  </section>
 
 </div>
-
--->
-
-<!-- modal box sample
-<div class="section">
-  <div class="container">
-    <a href="#" class="modalTrigger" data-modal="c_modal-message">Modal box</a>
-  </div>
-</div>
-
-<div id="c_modal-message" class="c_modal c_modal-small c_modal-centered">
-  <div class="c_modal-close"><span class="icon-close"></span></div>
-  <div class="c_modal-content">
-    <h3>Sorry for the mess but we're learning here</h3>
-    <p>We are currently running a pilot for our new support section.</p>
-    <p>This pilot is only covering our E8 and H9 headphones product range and it seems like you are looking for support with another product.</p>
-    <p>Don't worry. the link below will take  you to our regular support section.</p>    
-  </div>
-  <div class="c_modal-cta">
-    <a class="c_modal-primaryCTA" href="https://www.bang-olufsen.com/en/customer-service">B &amp; O Regular Support</a>
-  </div>
-</div>
-<div class="c_modal-backdrop"></div>
--->
-
-<script type="text/javascript">
-  window.BO_settings = {
-    "customize_article_id" : "{{dc 'customize_your_product_article_id'}}"
-  };
-</script>

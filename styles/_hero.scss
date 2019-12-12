@@ -12,7 +12,7 @@
 .c_hero {
   position: relative;
   overflow: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 84px;
 
   &-image {
     min-width: 100%;
@@ -78,15 +78,34 @@
       text-align: center;
 
       &:before {
-        display: none;;
+        color: #A9A9A9;
       }
 
       input[type="search"] {
         border-radius: 0;
         border: 0;
         padding: 15px;
+        padding-left: 42px;
         height: auto;
-        margin-bottom: 25px;
+        font-size: 16px;
+
+        &:focus {
+          color: $black;          
+        }
+
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: #A9A9A9;
+          opacity: 1; /* Firefox */        
+        }
+        
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+          color: #A9A9A9;
+        }
+        
+        &::-ms-input-placeholder { /* Microsoft Edge */
+          color: #A9A9A9;
+        }
+
       }
 
       input[type="submit"] {
