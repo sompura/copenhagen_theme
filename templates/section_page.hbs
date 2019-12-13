@@ -1,6 +1,6 @@
 <section class="c_hero c_hero--inner">
   <div class="c_hero-inner">
-    <div class="c_hero-message">{{section.name}}</div>    
+    <div class="c_hero-message">{{section.description}} Support</div>    
   </div>
   {{#is section.id 360007332792}}<img class="c_hero-image" src="{{asset 'bo_header_headphones_e8.jpg'}}" alt="{{section.name}}" />{{/is}}            
   <div class="c_hero-overlay"></div>
@@ -8,14 +8,9 @@
 
 <div class="container">
 
-  <!--<header class="page-header">
-    {{#if settings.show_follow_section}}
-      {{subscribe}}
-    {{/if}}
-    {{#if section.description}}
-      <p class="page-header-description">{{section.description}}</p>
-    {{/if}}
-  </header>-->
+  <div class="c_breadcrumb">
+    {{breadcrumbs}}
+  </div>
 
   {{#if section.articles}}
   <div class="c_promoted-articles">
@@ -32,9 +27,7 @@
     </ul>
   </div>
   {{/if}}
-</div>
 
-<div class="container">
   <div class="section-container">
     <section class="section-content">
       {{#if section.articles}}
@@ -51,70 +44,121 @@
       {{pagination}}
     </section>
   </div>
-</div>
 
-<div class="container">
   {{search scoped=false submit=false}}
-</div>
 
-<div class="container">    
-    {{#if section.sections}}
-      <ul class="section-list">
-        {{#each section.sections}}
-        <li class="section-list-item">
-            <a href="{{url}}">
-              <span>{{name}}</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" aria-hidden="true">
-                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 14.5l6.1-6.1c.2-.2.2-.5 0-.7L5 1.5"/>
-              </svg>
-            </a>
-          </li>
-        {{/each}}          
-      </ul>
-    {{/if}}
-</div>
+  {{#if section.sections}}
+    <ul class="section-list">
+      {{#each section.sections}}
+      <li class="section-list-item">
+          <a href="{{url}}">
+            <span>{{name}}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 14.5l6.1-6.1c.2-.2.2-.5 0-.7L5 1.5"/>
+            </svg>
+          </a>
+        </li>
+      {{/each}}          
+    </ul>
+  {{/if}}
 
-<div class="container">
-  <div class="section c_teaserBlock">
+
+  <div class="c_teaserBlock">
     <div class="c_teaserBlock-visual">
-      {{#is section.id 360007332792}}<img class="c_hero-image" src="{{asset 'bo_get_started_headphone.jpg'}}" alt="{{section.name}}" />{{/is}}
+      {{#is section.id 360007332792}}<img src="{{asset 'bo_headphones_e8_user_guide.jpg'}}" alt="{{section.description}}" data-speed="1.25" class="c_paralax-image" />{{/is}}
     </div>
     <div class="c_teaserBlock-content">
       <h3>User guides and software updates</h3>
-      <p>If you misplaced the quick start guide included in the box, you can download this as well as the complete guide for your {{section.name}}. You will also find a download link for the software updater if you prefer to update using your computer instead of the Bang &amp; Olufsen app.</p>      
-      {{#is section.id 360007332792}}<a  href="{{help_center.url}}/articles/360037735551" class="c_teaserBlock-cta">{{section.name}} Downloads</a>{{/is}}
+      <p>You can download the user guides for your {{section.description}} and the Software Updater for Mac and PC right here.</p>      
+      {{#is section.id 360007332792}}<a  href="{{help_center.url}}/articles/360037735551" class="c_teaserBlock-cta">{{section.description}} Downloads <img src="{{asset 'arrow-forward.svg'}}" alt="{{section.description}} Downloads" /></a>{{/is}}
     </div>
+    <div class="c_teaserBlock-overlay"></div>
   </div>
-</div>
 
-<div class="container">
-  <section class="section c_contact">
-      <div class="c_contact-chat">
-        <div class="c_contact-icon"><img src="{{asset 'ico_instant_chat.svg'}}" alt="{{dc 'contact_chat_cta'}}" /></div>
-        <div class="c_contact-content">
-          {{dc 'contact_chat'}}
-        </div>        
-        <div class="c_contact-cta">
-          <a href="#" class="c_contact-ctaLink">{{dc 'contact_chat_cta'}}</a>
-        </div>        
-      </div>
-      <div class="c_contact-email">
-        <div class="c_contact-icon"><img src="{{asset 'ico_send_email.svg'}}" alt="{{dc 'contact_email_cta'}}" /></div>
-        <div class="c_contact-content">
-          {{dc 'contact_email'}}
-        </div>        
-        <div class="c_contact-cta">
-          <a href="#" class="c_contact-ctaLink">{{dc 'contact_email_cta'}}</a>
-        </div>        
-      </div>
-      <div class="c_contact-talk">
-        <div class="c_contact-icon"><img src="{{asset 'ico_talk.svg'}}" alt="{{dc 'contact_talk_cta'}}" /></div>
-        <div class="c_contact-content">
-          {{dc 'contact_talk'}}
-        </div>        
-        <div class="c_contact-cta">
-          <a href="#" class="c_contact-ctaLink">{{dc 'contact_talk_cta'}}</a>
-        </div>        
-      </div>
-    </section>
+  <section class="c_support">
+    <div class="c_support-item">
+      <a href="#">
+        <div class="c_support-itemVisual">
+          <img src="{{asset 'bo_register_product.jpg'}}" alt="" />
+        </div>
+        <div class="c_support-itemContent">
+          Register your product
+        </div>
+        <div class="c_suppoprt-itemCTA">
+          Register Product <img src="{{asset 'arrow-forward.svg'}}" alt="" />
+        </div>
+      </a>
+    </div>
+    <div class="c_support-item">
+      <a href="#">
+        <div class="c_support-itemVisual">
+          <img src="{{asset 'bo_warranty_service.jpg'}}" alt="" />
+        </div>
+        <div class="c_support-itemContent">
+          We provide full coverage with B&amp;O specialist repairs and replacements
+        </div>
+        <div class="c_suppoprt-itemCTA">
+          Warranty service <img src="{{asset 'arrow-forward.svg'}}" alt="" />
+        </div>
+      </a>
+    </div>
+    <div class="c_support-item">
+      <a href="#">
+        <div class="c_support-itemVisual">
+          <img src="{{asset 'bo_track_repair.jpg'}}" alt="" />
+        </div>
+        <div class="c_support-itemContent">
+          Want to check the status of your warranty repair?
+        </div>
+        <div class="c_suppoprt-itemCTA">
+          Track repair <img src="{{asset 'arrow-forward.svg'}}" alt="" />
+        </div>
+      </a>
+    </div>
+    <div class="c_support-item">
+      <a href="#">
+        <div class="c_support-itemVisual">
+          <img src="{{asset 'bo_return_order.jpg'}}" alt="" />
+        </div>
+        <div class="c_support-itemContent">
+          Return your product within 30 days of purchase for a full refund.
+        </div>
+        <div class="c_suppoprt-itemCTA">
+          Return order <img src="{{asset 'arrow-forward.svg'}}" alt="" />
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="c_contact">
+    <h2>{{dc 'hp_we_are_here'}}</h2>
+    <div class="c_contact-item c_contact-chat">
+      <div class="c_contact-icon"><img src="{{asset 'ico_instant_chat.svg'}}" alt="{{dc 'contact_chat_cta'}}" /></div>
+      <div class="c_contact-content">
+        {{dc 'contact_chat'}}
+      </div>        
+      <div class="c_contact-cta">
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_chat_cta'}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="{{dc 'contact_chat_cta'}}" /></a>
+      </div>        
+    </div>
+    <div class="c_contact-item c_contact-email">
+      <div class="c_contact-icon"><img src="{{asset 'ico_send_email.svg'}}" alt="{{dc 'contact_email_cta'}}" /></div>
+      <div class="c_contact-content">
+        {{dc 'contact_email'}}
+      </div>        
+      <div class="c_contact-cta">
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_email_cta'}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="{{dc 'contact_email_cta'}}" /></a>
+      </div>        
+    </div>
+    <div class="c_contact-item c_contact-talk">
+      <div class="c_contact-icon"><img src="{{asset 'ico_talk.svg'}}" alt="{{dc 'contact_talk_cta'}}" /></div>
+      <div class="c_contact-content">
+        {{dc 'contact_talk'}}
+      </div>        
+      <div class="c_contact-cta">
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_talk_cta'}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="{{dc 'contact_talk_cta'}}" /></a>
+      </div>        
+    </div>
+  </section>
+
 </div>

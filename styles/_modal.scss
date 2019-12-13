@@ -4,11 +4,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: $background_color;
+    background: $white;
     z-index: 200;
     box-sizing: border-box;
-    padding: 15px;
+    padding: 64px;
     width: 90%;
+    max-width: 880px;
+    box-sizing: border-box;
 
     &.c_modal-centered {
         text-align: center;
@@ -39,39 +41,48 @@
 .c_modal-close {
     cursor: pointer;
     position: absolute;
-    right: 12px;
-    top: 8px;
+    right: 30px;
+    top: 30px;
+    width: 18px;
 }
 
-.c_modal-content {
-    padding: 10px 20px;
-    box-sizing: border-box;
+.c_modal-content {        
 
-    h3 {
-        font-family: $heading_font;
-        font-size: 24px;
+    h3 {                
+        font-size: 30px;
+        color: $black;
+        line-height: 1;
+        margin-bottom: 32px;
+        letter-spacing: 0.4px;
+        font-weight: normal;
     }
 
-    p {
-        font-family: $text_font;
+    p {        
         font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 32px;
+        color: #737373;
     }
 
 }
 
 .c_modal-cta {
-    margin: 20px 0 25px;
+    margin: 48px 0 0;
+    text-align: center;
 
-    .c_modal-primaryCTA {
-        border: 2px solid $text-color;
-        color: $text-color;
-        text-decoration: none;
-        font-family: $text_font;
-        font-size: 15px;
+    .c_modal-primaryCTA {        
+        color: $black;
+        text-decoration: none;        
+        font-size: 14px;
         text-transform: uppercase;
         letter-spacing: 2px;
-        font-weight: bold;
-        padding: 10px 20px;
+        font-weight: 500;
+        
+        img {
+            max-width: 24px;
+            margin-left: 10px;
+        }
+
     }
 
 }
@@ -83,7 +94,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: $text_color;    
+    background: rgba($black, 0.3);    
     z-index: 199;
     opacity: 0.7;
 }

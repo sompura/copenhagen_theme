@@ -230,6 +230,7 @@ var BO_JS = {
     this.$headerCloseTrigger = $('.c_header-close');
     this.$headerNavigation = $('.c_header-navigation');
     this.$contactContainer = $('.c_contact');
+    this.$footerContainer = $('.c_footer');
 
     this._setProductsSection();
     this._setVideoResponsive();   
@@ -495,6 +496,13 @@ var BO_JS = {
     });
 
     this.$headerNavigation.find('.c_header-navigation--disabled').on('click', function(e) {
+      e.preventDefault();
+      var modal = $(this).attr('data-modal');
+      self.$modalBackdrop.show();
+      $('#' + modal).fadeIn(500);  
+    });
+
+    this.$footerContainer.find('.c_footer-link--disabled').on('click', function(e) {
       e.preventDefault();
       var modal = $(this).attr('data-modal');
       self.$modalBackdrop.show();

@@ -1,138 +1,153 @@
 <section class="c_hero c_hero--inner">
   <div class="c_hero-inner">
-    <div class="c_hero-message">{{dc 'headphone_category_title'}}</div>    
+    <div class="c_hero-message">
+      {{#is category.id 360002304491}}{{dc 'headphone_category_title'}}{{/is}}
+    </div>    
   </div>
   {{#is category.id 360002304491}}<img class="c_hero-image" src="{{asset 'bo_header_headphones.jpg'}}" alt="{{category.name}}" />{{/is}}            
   <div class="c_hero-overlay"></div>
 </section>
 
 <div class="container">
-  <section class="section c_products">
+
+  <div class="c_breadcrumb">
+    {{breadcrumbs}}
+  </div>
+
+  <div class="c_findModel">
+    <h3>Don’t know what model you have? Use our guide to find out</h3>
+    <a href="#">View guide <img src="{{asset 'arrow-forward-dark.svg'}}" alt="View guide" /></a>
+  </div>
+
+  <section class="c_products c_products--normal">
     <ul>
       {{#each sections}}  
         {{#isnt id 360007467251}}      
           <li class="c_products-item">
             <a href='{{url}}' class="c_products-itemLink">
-              <div class="c_products-itemVisual"><img src="{{asset 'default_item_visual.png'}}" data-image="categories_sections_{{id}}" /></div>
-              <h4 class="c_products-itemTitle">{{name}}</h4>              
+              <div class="c_products-itemVisual">
+                {{#is id 360007434631}}<img src="{{asset 'bo_headphones_h9i.png'}}" alt="{{name}}" />{{/is}}
+                {{#is id 360007332792}}<img src="{{asset 'bo_headphones_e8.png'}}" alt="{{name}}" />{{/is}}
+              </div>
+              <h4 class="c_products-itemTitle">{{name}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="{{name}}" /></h4>              
             </a>
           </li>
         {{/isnt}}
       {{/each}}
     </ul>
   </section>
- <!-- category user manual section 
-  <div class="category-container">
-    <div class="category-content">       
-      <header class="page-header">
-       <h1>{{category.name}}</h1>
-        {{#if category.description}}
-          <p class="page-header-description">{{category.description}}</p>
-        {{/if}}
-      </header>      
-      <div class="section-tree">
-        {{#each sections}}
-          <section class="section">
-            <h2 class="section-tree-title">
-              {{name}}
-            </h2>
-            {{#if articles}}
-              <ul class="article-list">
-                {{#each articles}}
-                  <li class="article-list-item{{#if promoted}} article-promoted{{/if}}">
-                    {{#if promoted}}
-                      <span data-title="{{t 'promoted'}}" class="icon-star"></span>
-                    {{/if}}
-                    <a href="{{url}}" class="article-list-link">{{title}}</a>
-                    {{#if internal}}
-                      <span class="icon-lock" title="{{t 'internal'}}"></span>
-                    {{/if}}
-                  </li>
-                {{/each}}
-              </ul>
-              {{#if more_articles}}
-                <a href="{{url}}" class="see-all-articles">
-                  {{t 'show_all_articles' count=article_count}}
-                </a>
-              {{/if}}
-            {{/if}}
-          </section>
-          {{else}}
-          <i class="category-empty">
-            <a href="{{category.url}}">{{t 'empty'}}</a>
-          </i>
-        {{/each}}
-      </div>
-    </div>
+ 
+  <div class="c_userGuide">    
+    <a href="{{help_center.url}}/articles/360037806171">Can’t find your model? Visit our library for additional headphones <img src="{{asset 'arrow-forward-dark.svg'}}" alt="User guide library" /></a>
   </div>
-  -->
-</div>
 
-
-<div class="section">
-  <div class="container">
-    <!-- Headphone Category Global Article Block -->
-    {{#is category.id 360002304491}}
-      {{#each sections}}
-        {{#is id 360007467251}}
-          {{#each articles}}
-            {{#is id 360037259952}}
-              <div class="section c_teaserBlock">
-                <div class="c_teaserBlock-visual">
-                  <img src="{{asset 'bo_get_started_headphone.jpg'}}" alt="{{title}}" data-speed="1.25" class="c_paralax-image" />
-                </div>
-                <div class="c_teaserBlock-content">
-                  <h3>{{title}}</h3>
-                  <p>{{excerpt body characters=100}}</p>
-                  <a  href="{{url}}" class="c_teaserBlock-cta">{{dc 'get_started'}}</a>
-                </div>
+  <!-- Headphone Category Global Article Block -->
+  {{#is category.id 360002304491}}
+    {{#each sections}}
+      {{#is id 360007467251}}
+        {{#each articles}}
+          {{#is id 360037259952}}
+            <div class="c_teaserBlock">
+              <div class="c_teaserBlock-visual">
+                <img src="{{asset 'bg_headphones_get_started.jpg'}}" alt="{{title}}" data-speed="1.25" class="c_paralax-image" />
               </div>
-            {{/is}}
-          {{/each}}
-        {{/is}}
-      {{/each}}      
-    {{/is}}
-  </div>
-</div>
+              <div class="c_teaserBlock-content">
+                <h3>{{title}}</h3>
+                <p>{{excerpt body characters=100}}</p>
+                <a  href="{{url}}" class="c_teaserBlock-cta">{{dc 'get_started'}} <img src="{{asset 'arrow-forward.svg'}}" alt="{{dc 'get_started'}}" /></a>
+              </div>
+              <div class="c_teaserBlock-overlay"></div>
+            </div>
+          {{/is}}
+        {{/each}}
+      {{/is}}
+    {{/each}}      
+  {{/is}}
 
-<div class="container">
-  <section class="section c_contact">
-      <div class="c_contact-chat">
-        <div class="c_contact-icon"><img src="{{asset 'ico_instant_chat.svg'}}" alt="{{dc 'contact_chat_cta'}}" /></div>
-        <div class="c_contact-content">
-          {{dc 'contact_chat'}}
-        </div>        
-        <div class="c_contact-cta">
-          <a href="#" class="c_contact-ctaLink">{{dc 'contact_chat_cta'}}</a>
-        </div>        
-      </div>
-      <div class="c_contact-email">
-        <div class="c_contact-icon"><img src="{{asset 'ico_send_email.svg'}}" alt="{{dc 'contact_email_cta'}}" /></div>
-        <div class="c_contact-content">
-          {{dc 'contact_email'}}
-        </div>        
-        <div class="c_contact-cta">
-          <a href="#" class="c_contact-ctaLink">{{dc 'contact_email_cta'}}</a>
-        </div>        
-      </div>
-      <div class="c_contact-talk">
-        <div class="c_contact-icon"><img src="{{asset 'ico_talk.svg'}}" alt="{{dc 'contact_talk_cta'}}" /></div>
-        <div class="c_contact-content">
-          {{dc 'contact_talk'}}
-        </div>        
-        <div class="c_contact-cta">
-          <a href="#" class="c_contact-ctaLink">{{dc 'contact_talk_cta'}}</a>
-        </div>        
-      </div>
-    </section>
-</div>
+  <section class="c_support">
+    <div class="c_support-item">
+      <a href="#">
+        <div class="c_support-itemVisual">
+          <img src="{{asset 'bo_register_product.jpg'}}" alt="" />
+        </div>
+        <div class="c_support-itemContent">
+          Register your product
+        </div>
+        <div class="c_suppoprt-itemCTA">
+          Register Product <img src="{{asset 'arrow-forward.svg'}}" alt="" />
+        </div>
+      </a>
+    </div>
+    <div class="c_support-item">
+      <a href="#">
+        <div class="c_support-itemVisual">
+          <img src="{{asset 'bo_warranty_service.jpg'}}" alt="" />
+        </div>
+        <div class="c_support-itemContent">
+          We provide full coverage with B&amp;O specialist repairs and replacements
+        </div>
+        <div class="c_suppoprt-itemCTA">
+          Warranty service <img src="{{asset 'arrow-forward.svg'}}" alt="" />
+        </div>
+      </a>
+    </div>
+    <div class="c_support-item">
+      <a href="#">
+        <div class="c_support-itemVisual">
+          <img src="{{asset 'bo_track_repair.jpg'}}" alt="" />
+        </div>
+        <div class="c_support-itemContent">
+          Want to check the status of your warranty repair?
+        </div>
+        <div class="c_suppoprt-itemCTA">
+          Track repair <img src="{{asset 'arrow-forward.svg'}}" alt="" />
+        </div>
+      </a>
+    </div>
+    <div class="c_support-item">
+      <a href="#">
+        <div class="c_support-itemVisual">
+          <img src="{{asset 'bo_return_order.jpg'}}" alt="" />
+        </div>
+        <div class="c_support-itemContent">
+          Return your product within 30 days of purchase for a full refund.
+        </div>
+        <div class="c_suppoprt-itemCTA">
+          Return order <img src="{{asset 'arrow-forward.svg'}}" alt="" />
+        </div>
+      </a>
+    </div>
+  </section>
 
+  <section class="c_contact">
+    <h2>{{dc 'hp_we_are_here'}}</h2>
+    <div class="c_contact-item c_contact-chat">
+      <div class="c_contact-icon"><img src="{{asset 'ico_instant_chat.svg'}}" alt="{{dc 'contact_chat_cta'}}" /></div>
+      <div class="c_contact-content">
+        {{dc 'contact_chat'}}
+      </div>        
+      <div class="c_contact-cta">
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_chat_cta'}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="{{dc 'contact_chat_cta'}}" /></a>
+      </div>        
+    </div>
+    <div class="c_contact-item c_contact-email">
+      <div class="c_contact-icon"><img src="{{asset 'ico_send_email.svg'}}" alt="{{dc 'contact_email_cta'}}" /></div>
+      <div class="c_contact-content">
+        {{dc 'contact_email'}}
+      </div>        
+      <div class="c_contact-cta">
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_email_cta'}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="{{dc 'contact_email_cta'}}" /></a>
+      </div>        
+    </div>
+    <div class="c_contact-item c_contact-talk">
+      <div class="c_contact-icon"><img src="{{asset 'ico_talk.svg'}}" alt="{{dc 'contact_talk_cta'}}" /></div>
+      <div class="c_contact-content">
+        {{dc 'contact_talk'}}
+      </div>        
+      <div class="c_contact-cta">
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_talk_cta'}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="{{dc 'contact_talk_cta'}}" /></a>
+      </div>        
+    </div>
+  </section>
 
-<div class="container-divider"></div>
-
-<div class="container"> 
-  <nav class="sub-nav">
-    <!--{{breadcrumbs}}-->
-    {{search submit=false}}
-  </nav>
 </div>
