@@ -911,17 +911,16 @@ ul {
 }
 
 /***** Footer *****/
-.footer {
-  border-top: 1px solid #f1f1f1;
-  margin-top: 60px;
-  padding: 30px 0;
+.c_footer {
+  background: #fafafa;
+  padding: 54px 0 22px 0;
 }
 
-.footer a {
+.c_footer a {
   color: lighten($text_color, 20%);
 }
 
-.footer-inner {
+.c_footer-inner {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 5%;
@@ -930,13 +929,13 @@ ul {
 }
 
 @media (min-width: 1440px) {
-  .footer-inner {
+  .c_footer-inner {
     padding: 0;
     width: 90%;
   }
 }
 
-.footer-language-selector {
+.c_footer-language-selector {
   color: lighten($text_color, 20%);
   display: inline-block;
   font-weight: 300;
@@ -5038,7 +5037,6 @@ html[lang|="zh"] .search-results-description em {
 .c_contact .c_contact-email,
 .c_contact .c_contact-talk {
   width: calc(33.33% - 20px);
-  min-height: 420px;
   display: inline-block;
   vertical-align: top;
   background: #fafafa;
@@ -5056,7 +5054,7 @@ html[lang|="zh"] .search-results-description em {
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  border: 1px solid #000000;
+  border: 2px solid #000000;
   text-align: center;
   display: inline-block;
   position: relative;
@@ -5213,7 +5211,7 @@ html[lang|="zh"] .search-results-description em {
 }
 
 .c_support .c_support-itemContent {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.2;
   font-weight: 400;
   color: #ffffff;
@@ -5233,7 +5231,7 @@ html[lang|="zh"] .search-results-description em {
   position: absolute;
   bottom: 32px;
   right: 24px;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   color: #ffffff;
   line-height: 1;
@@ -5246,8 +5244,4 @@ html[lang|="zh"] .search-results-description em {
 
 .c_support .c_suppoprt-itemCTA img {
   max-width: 24px;
-}
-
-#preview-bar-container {
-  display: none;
 }

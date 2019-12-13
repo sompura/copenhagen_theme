@@ -1,23 +1,63 @@
-<footer class="footer">
-  <div class="footer-inner">
-    {{#link 'help_center'}}{{help_center.name}}{{/link}}<br/>
-    <a href="{{help_center.url}}/articles/360037806171">Legacy Library</a>
-
-    <div class="footer-language-selector">
-      {{#if alternative_locales}}
-        <div class="dropdown language-selector">
-          <button class="dropdown-toggle" aria-haspopup="true">
-            {{current_locale.name}}
-          </button>
-          <span class="dropdown-menu dropdown-menu-end" role="menu">
-            {{#each alternative_locales}}
-              <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
-                {{name}}
-              </a>
-            {{/each}}
-          </span>
+<footer class="c_footer">
+  <div class="c_footer-inner">
+    <div class="c_footer-branding">
+      <a href="{{help_center.url}}">B&amp;O Support</a>
+    </div>
+    <div class="c_footer-content">
+      <div class="c_footer-column">
+        <h4>Language</h4>
+        <div class="c_footer-language-selector">
+          {{#if alternative_locales}}
+            <div class="dropdown language-selector">
+              <button class="dropdown-toggle" aria-haspopup="true">
+                {{current_locale.name}}
+              </button>
+              <span class="dropdown-menu dropdown-menu-end" role="menu">
+                {{#each alternative_locales}}
+                  <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
+                    {{name}}
+                  </a>
+                {{/each}}
+              </span>
+            </div>
+          {{/if}}
         </div>
-      {{/if}}
+        <h4>BANG &amp; OLUFSEN</h4>
+        <a href="https://www.bang-olufsen.com">Bang-Olufsen.com</a>
+      </div>
+      <div class="c_footer-column">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#" data-modal="c_modal-message" class="c_header-navigation--disabled">Speakers</a></li>
+          <li><a href="{{help_center.url}}/categories/360002304491">Headphones</a></li>
+          <li><a href="#" data-modal="c_modal-message" class="c_header-navigation--disabled">Televisions</a></li>
+          <li><a href="#" data-modal="c_modal-message" class="c_header-navigation--disabled">Accessories</a></li>
+          <li><a href="#" data-modal="c_modal-message" class="c_header-navigation--disabled">App</a></li>
+          <li><a href="#" data-modal="c_modal-message" class="c_header-navigation--disabled">Other</a></li>
+          <li><a href="{{help_center.url}}/articles/360037806171">User guide library</a></li>
+        </ul>
+      </div>
+      <div class="c_footer-column">
+        <h4>Registration &amp; Policies</h4>
+        <ul>
+          <li><a href="#">Product registration</a></li>
+          <li><a href="#">Warranty service</a></li>
+          <li><a href="#">Track repair</a></li>
+          <li><a href="#">Online order return</a></li>
+          <li><a href="#">Legal information</a></li>
+        </ul>
+      </div>
+      <div class="c_footer-column">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Chat with us</a></li>
+          <li><a href="#">Write us</a></li>          
+          <li><a href="#">Call us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="c_footer-copyright">
+      <p>&copy; Bang &amp; Olufsen 2020</p>
     </div>
   </div>
 </footer>

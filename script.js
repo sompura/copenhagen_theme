@@ -229,6 +229,7 @@ var BO_JS = {
     this.$headerMenuTrigger = $('.c_header-menu');
     this.$headerCloseTrigger = $('.c_header-close');
     this.$headerNavigation = $('.c_header-navigation');
+    this.$contactContainer = $('.c_contact');
 
     this._setProductsSection();
     this._setVideoResponsive();   
@@ -236,6 +237,7 @@ var BO_JS = {
     //this._fetchUserGuideArticles();
     //this._fetchCategories();
     //this._fetchGlobalArticles();
+    this._equalHeightBoxes();
     this._bindEvents();
 
   },
@@ -265,6 +267,9 @@ var BO_JS = {
     var supportContainerWidth = this.$supportContainer.find('.c_support-item').width();
     this.$supportContainer.find('.c_support-item').height(supportContainerWidth);
 
+    //update the equal height boxes
+    this._equalHeightBoxes();
+
   },
 
   _setProductsSection: function() {
@@ -276,6 +281,26 @@ var BO_JS = {
     //update support section height
     var supportContainerWidth = this.$supportContainer.find('.c_support-item').width();
     this.$supportContainer.find('.c_support-item').height(supportContainerWidth);
+
+  },
+
+  _equalHeightBoxes: function() {
+
+    var self = this;
+    
+    //remove the inline style so it can be set again on resize
+    this.$contactContainer.find('.c_contact-item').removeAttr('style');
+
+    //set the equal height for the contact blocks
+    var highestBox = 0; 
+    this.$contactContainer.find('.c_contact-item').each(function(){        
+      if($(this).height() > highestBox) {
+        highestBox = $(this).height(); 
+      } 
+    });
+    
+    //set the highest height to the blocks    
+    this.$contactContainer.find('.c_contact-item').height(highestBox);
 
   },
 
