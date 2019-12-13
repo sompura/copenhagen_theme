@@ -916,16 +916,11 @@ ul {
   padding: 54px 0 22px 0;
 }
 
-.c_footer a {
-  color: lighten($text_color, 20%);
-}
-
 .c_footer-inner {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 5%;
-  display: flex;
-  justify-content: space-between;
+  margin: 0 auto;
 }
 
 @media (min-width: 1440px) {
@@ -933,6 +928,32 @@ ul {
     padding: 0;
     width: 90%;
   }
+}
+
+.c_footer-branding {
+  margin-bottom: 38px;
+}
+
+.c_footer-branding a {
+  text-decoration: none;
+}
+
+.c_footer-branding img,
+.c_footer-branding span {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.c_footer-branding img {
+  max-width: 30px;
+}
+
+.c_footer-branding span {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000000;
+  letter-spacing: 1px;
+  margin-left: 6px;
 }
 
 .c_footer-language-selector {
@@ -2180,6 +2201,32 @@ ul {
 .article-steps-body li h1,
 .article-steps-body li p,
 .article-steps-body li ul {
+  float: left;
+  max-width: 50%;
+}
+
+.article-simple-steps-body ol {
+  margin: 0;
+  padding: 0;
+}
+
+.article-simple-steps-body ol li {
+  list-style: none;
+  border-bottom: 1px solid #dedede;
+  padding: 50px 0 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.article-simple-steps-body ol li > img {
+  float: right;
+  max-width: 45%;
+  margin-top: 10px;
+}
+
+.article-simple-steps-body ol li h1,
+.article-simple-steps-body ol li p,
+.article-simple-steps-body ol li ul {
   float: left;
   max-width: 50%;
 }

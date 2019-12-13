@@ -2,13 +2,37 @@
 .c_footer {
   background: $light-gray;  
   padding: 54px 0 22px 0;
-
-  a { color: $secondary-text-color; }
-
+  
   &-inner {
     @include max-width-container;
-    display: flex;
-    justify-content: space-between;
+    margin: 0 auto;    
+  }
+
+  &-branding {
+    margin-bottom: 38px;
+
+    a {
+      text-decoration: none;
+    }
+
+    img,
+    span {
+      display: inline-block;
+      vertical-align: baseline;
+    }
+
+    img {
+      max-width: 30px;
+    }
+
+    span {
+      font-size: 14px;
+      text-transform: uppercase;
+      color: $black;
+      letter-spacing: 1px;
+      margin-left: 6px;
+    }
+
   }
 
   &-language-selector {
