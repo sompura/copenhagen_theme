@@ -400,7 +400,6 @@
             > img {
                 float: right;
                 max-width: 45%;
-                margin-top: 10px;
             }
 
             h1 {
@@ -451,13 +450,14 @@
 
           > img {
             float: right;
-            max-width: 45%;
-            margin-top: 10px;
+            max-width: 45%;            
           }
 
           h1 {
             font-size: 20px;
             line-height: 26px;
+            letter-spacing: 0.4px;
+            font-weight: 400;
           }
 
           h1,
