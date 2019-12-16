@@ -54,3 +54,52 @@
     display: none;
   }
 }
+
+.c_section-category {
+
+  margin: 0 0 128px;
+
+  &-item {
+    position: relative;
+    width: calc(16.66% - 24px);        
+    display: inline-block;
+    vertical-align: top;
+    background: $light-gray;
+    margin-left: 24px;
+    text-align: center;    
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+  }
+
+  &-link {
+    box-sizing: border-box;
+    padding: 64px 23px;
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;            
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $black;
+    text-decoration: none;
+
+    span {
+      display: block;
+      min-height: 40px;
+      margin-bottom: 30px;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    img {
+        max-width: 24px;
+    }
+
+  }
+
+}

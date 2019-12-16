@@ -16,8 +16,16 @@
       content: "/";
       margin: 0 4px;
     }
-    a:visited {
-      color: #737373;
+
+    a {
+      text-decoration: none;
+      color:  #737373;
     }
+
+    a:hover {
+      text-decoration: none;
+      color: $black;
+    }
+
   }
 }

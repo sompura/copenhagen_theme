@@ -9,11 +9,12 @@
   <div class="c_hero-overlay"></div>
 </section>
 
-<!--<div class="section c_paralax">
-  <img src="{{asset 'bo_hero_paralax.jpg'}}" data-speed="-1" class="c_paralax-image">
-</div>-->
-
 <div class="container">
+  <div class="c_breadcrumb">    
+    <ol class="breadcrumbs">
+      <li><a href="{{help_center.url}}">{{help_center.name}}</a></li>
+    </ol>
+  </div>
   <section class="c_products">
     <ul>
       {{#each categories}}
@@ -29,7 +30,7 @@
                           <div class="c_products-itemVisual">
                             <img src="{{asset 'bo_speakers.png'}}" alt="{{name}}" />
                           </div>
-                          <h4 class="c_products-itemTitle">{{name}}</h4> 
+                          <h4 class="c_products-itemTitle">{{name}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="" /></h4> 
                         </a>
                       {{/is}}
                       {{#is id 360002296952}}
@@ -37,7 +38,7 @@
                           <div class="c_products-itemVisual">
                             <img src="{{asset 'bo_televisions.png'}}" alt="{{name}}" />
                           </div>
-                          <h4 class="c_products-itemTitle">{{name}}</h4> 
+                          <h4 class="c_products-itemTitle">{{name}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="" /></h4> 
                         </a>
                       {{/is}}
                       {{#is id 360002304491}}
@@ -45,7 +46,7 @@
                           <div class="c_products-itemVisual">
                             <img src="{{asset 'bo_headphones.png'}}" alt="{{name}}" />
                           </div>
-                          <h4 class="c_products-itemTitle">{{name}}</h4> 
+                          <h4 class="c_products-itemTitle">{{name}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="" /></h4> 
                         </a>
                       {{/is}}
                       {{#is id 360002384932}}
@@ -53,7 +54,7 @@
                           <div class="c_products-itemVisual">
                             <img src="{{asset 'bo_accessories.png'}}" alt="{{name}}" />
                           </div>
-                          <h4 class="c_products-itemTitle">{{name}}</h4> 
+                          <h4 class="c_products-itemTitle">{{name}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="" /></h4> 
                         </a>
                       {{/is}}
                       {{#is id 360002405932}}
@@ -61,7 +62,7 @@
                           <div class="c_products-itemVisual">
                             <img src="{{asset 'bo_apps.png'}}" alt="{{name}}" />
                           </div>
-                          <h4 class="c_products-itemTitle">{{name}}</h4> 
+                          <h4 class="c_products-itemTitle">{{name}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="" /></h4> 
                         </a>
                       {{/is}}
                       {{#is id 360002413751}}
@@ -69,7 +70,7 @@
                           <div class="c_products-itemVisual">
                             <img src="{{asset 'bo_others.png'}}" alt="{{name}}" />
                           </div>
-                          <h4 class="c_products-itemTitle">{{name}}</h4> 
+                          <h4 class="c_products-itemTitle">{{name}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="" /></h4> 
                         </a>
                       {{/is}}                      
                     </li>
@@ -91,7 +92,7 @@
             {{#is id 360037095852}}
               <div class="c_teaserBlock">
                 <div class="c_teaserBlock-visual">
-                  <img src="{{asset 'bo_setup_customize.jpg'}}" alt="{{title}}" data-speed="1.25" class="c_paralax-image" />                  
+                  <img src="{{asset 'bo_setup_customize.jpg'}}" alt="{{title}}" data-speed="0.8" class="c_paralax-image" />                  
                 </div>
                 <div class="c_teaserBlock-content">
                   <h3>{{title}}</h3>

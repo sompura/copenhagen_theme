@@ -231,6 +231,8 @@ var BO_JS = {
     this.$headerNavigation = $('.c_header-navigation');
     this.$contactContainer = $('.c_contact');
     this.$footerContainer = $('.c_footer');
+    this.$promotedArticleContainer = $('.c_promoted-articles');
+    this.$sectionCategoryContainer = $('.c_section-category');
 
     this._setProductsSection();
     this._setVideoResponsive();   
@@ -291,17 +293,41 @@ var BO_JS = {
     
     //remove the inline style so it can be set again on resize
     this.$contactContainer.find('.c_contact-item').removeAttr('style');
+    this.$promotedArticleContainer.find('.c_promoted-articles-item').removeAttr('style');
+    this.$sectionCategoryContainer.find('.c_section-category-item').removeAttr('style');
 
     //set the equal height for the contact blocks
-    var highestBox = 0; 
+    var contactHighestBox = 0; 
     this.$contactContainer.find('.c_contact-item').each(function(){        
-      if($(this).height() > highestBox) {
-        highestBox = $(this).height(); 
+      if($(this).height() > contactHighestBox) {
+        contactHighestBox = $(this).height(); 
       } 
     });
     
-    //set the highest height to the blocks    
-    this.$contactContainer.find('.c_contact-item').height(highestBox);
+    //set the highest height to the contact blocks    
+    this.$contactContainer.find('.c_contact-item').height(contactHighestBox);
+
+    //set the equal height for the promoted articles blocks
+    var promotedHighestBox = 0; 
+    this.$promotedArticleContainer.find('.c_promoted-articles-item').each(function(){        
+      if($(this).height() > promotedHighestBox) {
+        promotedHighestBox = $(this).height(); 
+      } 
+    });
+
+    //set the highest height to the promoted articles blocks    
+    this.$promotedArticleContainer.find('.c_promoted-articles-item').height(promotedHighestBox);
+
+    //set the equal height for the section category blocks
+    var sectionCategoryHighestBox = 0; 
+    this.$sectionCategoryContainer.find('.c_section-category-item').each(function(){        
+      if($(this).height() > sectionCategoryHighestBox) {
+        sectionCategoryHighestBox = $(this).height(); 
+      } 
+    });
+
+    //set the highest height to the section category blocks   
+    this.$sectionCategoryContainer.find('.c_section-category-item').height(sectionCategoryHighestBox);
 
   },
 

@@ -111,11 +111,12 @@
     li {
         list-style: none;
         margin: 8px 0;
+        position: relative;
 
         a {
           display: inline-block;
           font-size: 24px;
-          line-break: 30px;
+          line-height: 1;
           color: $white;
           text-decoration: none;
           letter-spacing: 1px;
@@ -170,17 +171,15 @@
 
           @include desktop {
             display: inline-block;
+            height: 14px;
           }
         }
 
-        
-
-        .c_header-search {
-
+        .c_header-search {         
           img {
             @include desktop {   
               display: inline-block;
-              width: 14px;
+              width: 14px;              
             }
           }
 

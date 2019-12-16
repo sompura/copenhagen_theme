@@ -77,6 +77,11 @@
       color: $footer-gray;
       font-size: 14px;
       line-height: 1;
+
+      &:hover {
+        color: $black;
+      }
+
     }
 
     ul {

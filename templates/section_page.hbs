@@ -12,56 +12,57 @@
     {{breadcrumbs}}
   </div>
 
+  <div class="c_pageHeader">
+    <h2>Get the most out of your {{section.description}}</h2>
+  </div>
+
   {{#if section.articles}}
-  <div class="c_promoted-articles">
-    <ul>
+  <div class="c_promoted-articles">    
       {{#each section.articles}}
         {{#if promoted}}
-        <li>
-          <h3>{{title}}</h3>
-          <p>{{excerpt body characters=100}}</p>
-          <a href="{{url}}" class="c_promoted-articles-link">Find out ></a>
-        </li>       
+          <div class="c_promoted-articles-item">
+            <h3>{{title}}</h3>
+            <p>{{excerpt body characters=100}}</p>
+            <a href="{{url}}" class="c_promoted-articles-link">Read More <img src="{{asset 'arrow-forward-dark.svg'}}" alt="Read More" /></a>
+          </div>       
         {{/if}}
       {{/each}}
-    </ul>
   </div>
   {{/if}}
 
-  <div class="section-container">
-    <section class="section-content">
-      {{#if section.articles}}
-        <ul class="article-list">
-          {{#each section.articles}}
-            {{#unless promoted}}
-            <li class="article-list-item">                              
-              <a href="{{url}}" class="article-list-link">{{title}}</a>>              
-            </li>
-            {{/unless}}
-          {{/each}}
-        </ul>      
-      {{/if}}
+  {{#if section.articles}}
+    <div class="c_pageHeader">
+      <h2>Need help?</h2>
+    </div>
+    <div class="c_article-list">      
+      {{#each section.articles}}
+        {{#unless promoted}}
+          <div class="article-list-item">                              
+            <a href="{{url}}" class="c_article-list-link">{{title}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="" /></a>
+          </div>
+        {{/unless}}
+      {{/each}}
       {{pagination}}
-    </section>
-  </div>
+    </div>
+  {{/if}}
 
-  {{search scoped=false submit=false}}
+  <div class="c_search-scoped">
+    <h3>Use the search field or select a category to find FAQs for your {{section.description}}</h3>
+    {{search scoped=false submit=false}}
+  </div>  
 
   {{#if section.sections}}
-    <ul class="section-list">
+    <div class="c_section-category">
       {{#each section.sections}}
-      <li class="section-list-item">
-          <a href="{{url}}">
-            <span>{{name}}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" aria-hidden="true">
-              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 14.5l6.1-6.1c.2-.2.2-.5 0-.7L5 1.5"/>
-            </svg>
+      <div class="c_section-category-item">
+        <a href="{{url}}" class="c_section-category-link">
+            <span>{{name}}</span>            
+            <img src="{{asset 'arrow-forward-dark.svg'}}" alt="" />
           </a>
-        </li>
-      {{/each}}          
-    </ul>
+      </div>
+      {{/each}}
+    </div>
   {{/if}}
-
 
   <div class="c_teaserBlock">
     <div class="c_teaserBlock-visual">

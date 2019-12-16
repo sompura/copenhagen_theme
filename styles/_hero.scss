@@ -12,7 +12,7 @@
 .c_hero {
   position: relative;
   overflow: hidden;
-  margin-bottom: 84px;
+  margin-bottom: 24px;
 
   &-image {
     min-width: 100%;
@@ -29,8 +29,7 @@
   }
 
   &--inner {
-    height: 400px;
-    margin-bottom: 24px;
+    height: 400px;    
 
     .c_hero-image {
       min-height: auto;

@@ -1,0 +1,62 @@
+<section class="c_hero c_hero--inner">
+  <div class="c_hero-inner">
+    <div class="c_hero-message">{{section.description}} FAQ's - {{section.name}}</div>    
+  </div>
+  {{#is section.id 360007434751}}<img class="c_hero-image" src="{{asset 'bo_header_headphones_e8.jpg'}}" alt="{{section.name}}" />{{/is}}            
+  <div class="c_hero-overlay"></div>
+</section>
+
+<div class="container">
+
+  <div class="c_breadcrumb">
+    {{breadcrumbs}}
+  </div>
+
+  {{#if section.articles}}    
+    <div class="c_article-list">      
+      {{#each section.articles}}        
+        <div class="article-list-item">                              
+        <a href="{{url}}" class="c_article-list-link">{{title}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="" /></a>
+        </div>
+      {{/each}}
+      {{pagination}}
+    </div>
+  {{/if}}
+
+  <div class="c_search-scoped">
+    <h3>Use the search field or select a category to find FAQs for your {{section.description}}</h3>
+    {{search scoped=false submit=false}}
+  </div>    
+
+  <section class="c_contact">
+    <h2>{{dc 'hp_we_are_here'}}</h2>
+    <div class="c_contact-item c_contact-chat">
+      <div class="c_contact-icon"><img src="{{asset 'ico_instant_chat.svg'}}" alt="{{dc 'contact_chat_cta'}}" /></div>
+      <div class="c_contact-content">
+        {{dc 'contact_chat'}}
+      </div>        
+      <div class="c_contact-cta">
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_chat_cta'}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="{{dc 'contact_chat_cta'}}" /></a>
+      </div>        
+    </div>
+    <div class="c_contact-item c_contact-email">
+      <div class="c_contact-icon"><img src="{{asset 'ico_send_email.svg'}}" alt="{{dc 'contact_email_cta'}}" /></div>
+      <div class="c_contact-content">
+        {{dc 'contact_email'}}
+      </div>        
+      <div class="c_contact-cta">
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_email_cta'}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="{{dc 'contact_email_cta'}}" /></a>
+      </div>        
+    </div>
+    <div class="c_contact-item c_contact-talk">
+      <div class="c_contact-icon"><img src="{{asset 'ico_talk.svg'}}" alt="{{dc 'contact_talk_cta'}}" /></div>
+      <div class="c_contact-content">
+        {{dc 'contact_talk'}}
+      </div>        
+      <div class="c_contact-cta">
+        <a href="#" class="c_contact-ctaLink">{{dc 'contact_talk_cta'}} <img src="{{asset 'arrow-forward-dark.svg'}}" alt="{{dc 'contact_talk_cta'}}" /></a>
+      </div>        
+    </div>
+  </section>
+
+</div>
