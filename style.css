@@ -2449,7 +2449,7 @@ ul {
 .c_article-content--simpleSteps ol li {
   list-style: none;
   border-top: 1px solid #e0e0e0;
-  padding: 53px 0 48px 0;
+  padding: 48px 0 48px 0;
   position: relative;
   overflow: hidden;
 }
@@ -2480,7 +2480,7 @@ ul {
 .c_article-content--steps ol li {
   list-style: none;
   border-top: 1px solid #dedede;
-  padding: 50px 0 30px 55px;
+  padding: 48px 0 48px 55px;
   position: relative;
   overflow: hidden;
 }
@@ -2488,11 +2488,10 @@ ul {
 .c_article-content--steps ol li > strong {
   position: absolute;
   left: 0;
-  top: 65px;
+  top: 60px;
   font-size: 50px;
-  font-weight: normal;
   color: #000000;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .c_article-content--steps ol li > img {
