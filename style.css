@@ -2457,12 +2457,13 @@ ul {
 .c_article-content--simpleSteps ol li > img {
   float: right;
   max-width: 45%;
-  margin-top: 10px;
 }
 
 .c_article-content--simpleSteps ol li h1 {
   font-size: 20px;
   line-height: 26px;
+  letter-spacing: 0.4px;
+  font-weight: 400;
 }
 
 .c_article-content--simpleSteps ol li h1,
@@ -2497,12 +2498,13 @@ ul {
 .c_article-content--steps ol li > img {
   float: right;
   max-width: 45%;
-  margin-top: 10px;
 }
 
 .c_article-content--steps ol li h1 {
   font-size: 20px;
   line-height: 26px;
+  letter-spacing: 0.4px;
+  font-weight: 400;
 }
 
 .c_article-content--steps ol li h1,
