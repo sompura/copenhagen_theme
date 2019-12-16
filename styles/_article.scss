@@ -388,19 +388,24 @@
 
         li {
             list-style: none;
-            border-bottom: 1px solid #e0e0e0;
+            border-top: 1px solid #e0e0e0;
             padding: 53px 0 48px 0;
             position: relative;
             overflow: hidden;
 
             &:first-child {
-              border-top: 1px solid #e0e0e0;
+              //border-top: 1px solid #e0e0e0;
             }
 
             > img {
                 float: right;
                 max-width: 45%;
                 margin-top: 10px;
+            }
+
+            h1 {
+              font-size: 20px;
+              line-height: 26px;
             }
 
             h1,
@@ -424,18 +429,23 @@
 
         li {
           list-style: none;
-          border-bottom: 1px solid #dedede;
+          border-top: 1px solid #dedede;
           padding: 50px 0 30px 55px;
           position: relative;
           overflow: hidden;
 
+          &:first-child {
+            //border-top: 1px solid #e0e0e0;
+          }
+
           > strong {
             position: absolute;
             left: 0;
-            top: 35px;
-            font-size: 60px;
+            top: 65px;
+            font-size: 50px;
             font-weight: normal;
-            color: #0070c9;
+            color: $black;
+            font-weight: 400;
           }
 
           > img {
@@ -444,12 +454,17 @@
             margin-top: 10px;
           }
 
-            h1,
-            p,
-            ul {
-                float: left;
-                max-width: 50%;
-            }
+          h1 {
+            font-size: 20px;
+            line-height: 26px;
+          }
+
+          h1,
+          p,
+          ul {
+              float: left;
+              max-width: 50%;
+          }
 
         }
       }

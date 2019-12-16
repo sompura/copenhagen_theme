@@ -2448,20 +2448,21 @@ ul {
 
 .c_article-content--simpleSteps ol li {
   list-style: none;
-  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
   padding: 53px 0 48px 0;
   position: relative;
   overflow: hidden;
-}
-
-.c_article-content--simpleSteps ol li:first-child {
-  border-top: 1px solid #e0e0e0;
 }
 
 .c_article-content--simpleSteps ol li > img {
   float: right;
   max-width: 45%;
   margin-top: 10px;
+}
+
+.c_article-content--simpleSteps ol li h1 {
+  font-size: 20px;
+  line-height: 26px;
 }
 
 .c_article-content--simpleSteps ol li h1,
@@ -2478,7 +2479,7 @@ ul {
 
 .c_article-content--steps ol li {
   list-style: none;
-  border-bottom: 1px solid #dedede;
+  border-top: 1px solid #dedede;
   padding: 50px 0 30px 55px;
   position: relative;
   overflow: hidden;
@@ -2487,16 +2488,22 @@ ul {
 .c_article-content--steps ol li > strong {
   position: absolute;
   left: 0;
-  top: 35px;
-  font-size: 60px;
+  top: 65px;
+  font-size: 50px;
   font-weight: normal;
-  color: #0070c9;
+  color: #000000;
+  font-weight: 400;
 }
 
 .c_article-content--steps ol li > img {
   float: right;
   max-width: 45%;
   margin-top: 10px;
+}
+
+.c_article-content--steps ol li h1 {
+  font-size: 20px;
+  line-height: 26px;
 }
 
 .c_article-content--steps ol li h1,
