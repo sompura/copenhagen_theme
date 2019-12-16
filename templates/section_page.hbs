@@ -22,7 +22,7 @@
         {{#if promoted}}
           <div class="c_promoted-articles-item">
             <h3>{{title}}</h3>
-            <p>{{excerpt body characters=100}}</p>
+            <p>{{excerpt body characters=115}}</p>
             <a href="{{url}}" class="c_promoted-articles-link">Read More <img src="{{asset 'arrow-forward-dark.svg'}}" alt="Read More" /></a>
           </div>       
         {{/if}}
@@ -47,7 +47,7 @@
   {{/if}}
 
   <div class="c_search-scoped">
-    <h3>Use the search field to find FAQs for your {{section.description}}</h3>
+    <h3>Use the search field or select a category to find FAQs for your {{section.description}}</h3>
     {{search scoped=false submit=false}}
   </div>  
 

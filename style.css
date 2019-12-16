@@ -1076,6 +1076,10 @@ ul {
   margin: 24px 0 32px 0;
 }
 
+.c_breadcrumb--category {
+  margin-bottom: 48px;
+}
+
 /***** Search field *****/
 .search {
   position: relative;
