@@ -46,9 +46,8 @@
     </div>
   {{/if}}
 
-  <div class="c_search-scoped">
-    <h3>Use the search field or select a category to find FAQs for your {{section.description}}</h3>
-    {{search scoped=false submit=false}}
+  <div class="c_search-scoped c_search-scoped--title">
+    <h3>Use the search field or select a category to find FAQs for your {{section.description}}</h3>    
   </div>  
 
   {{#if section.sections}}
@@ -63,6 +62,10 @@
       {{/each}}
     </div>
   {{/if}}
+
+  <div class="c_search-scoped">    
+    {{search scoped=false submit=false}}
+  </div>
 
   <div class="c_teaserBlock">
     <div class="c_teaserBlock-visual">
@@ -96,7 +99,7 @@
           <img src="{{asset 'bo_warranty_service.jpg'}}" alt="" />
         </div>
         <div class="c_support-itemContent">
-          We provide full coverage with B&amp;O specialist repairs and replacements
+          Our warranty service offers full coverage with specialist repairs and replacements
         </div>
         <div class="c_suppoprt-itemCTA">
           Warranty service <img src="{{asset 'arrow-forward.svg'}}" alt="" />
@@ -109,10 +112,10 @@
           <img src="{{asset 'bo_track_repair.jpg'}}" alt="" />
         </div>
         <div class="c_support-itemContent">
-          Want to check the status of your warranty repair?
+          Track the status of your warranty request
         </div>
         <div class="c_suppoprt-itemCTA">
-          Track repair <img src="{{asset 'arrow-forward.svg'}}" alt="" />
+          Track status <img src="{{asset 'arrow-forward.svg'}}" alt="" />
         </div>
       </a>
     </div>

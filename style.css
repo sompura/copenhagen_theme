@@ -1130,7 +1130,11 @@ ul {
 
 .c_search-scoped {
   max-width: 760px;
-  margin: 0 auto 64px;
+  margin: 0 auto 128px;
+}
+
+.c_search-scoped.c_search-scoped--title {
+  margin-bottom: 48px;
 }
 
 .c_search-scoped h3 {
@@ -1195,6 +1199,7 @@ ul {
   position: relative;
   overflow: hidden;
   margin-bottom: 24px;
+  z-index: 10;
 }
 
 .c_hero-image {
@@ -1513,26 +1518,29 @@ ul {
 
 /***** Category List *****/
 .c_products {
-  margin-bottom: 128px;
+  margin-bottom: 104px;
+  overflow: hidden;
 }
 
 .c_products ul {
   margin: 0;
   padding: 0;
   text-align: left;
+  float: left;
+  width: 100%;
 }
 
 .c_products ul .c_products-item {
   list-style: none;
-  display: inline-block;
-  width: calc(25% - 19px);
-  margin: 12px 15px 12px 0;
-  vertical-align: top;
+  display: block;
+  width: calc(25% - 18px);
+  margin: 0 0 24px 24px;
   background: #fafafa;
+  float: left;
 }
 
-.c_products ul .c_products-item:nth-child(4n) {
-  margin-right: 0;
+.c_products ul .c_products-item:nth-child(4n+1) {
+  margin-left: 0;
 }
 
 .c_products ul .c_products-item:hover {
@@ -1960,7 +1968,7 @@ ul {
 }
 
 .c_section-category {
-  margin: 0 0 128px;
+  margin: 0 0 48px;
 }
 
 .c_section-category-item {
@@ -5431,6 +5439,7 @@ html[lang|="zh"] .search-results-description em {
 
 .c_contact {
   margin-bottom: 128px;
+  overflow: hidden;
 }
 
 .c_contact h2 {
@@ -5445,14 +5454,14 @@ html[lang|="zh"] .search-results-description em {
 .c_contact .c_contact-chat,
 .c_contact .c_contact-email,
 .c_contact .c_contact-talk {
-  width: calc(33.33% - 20px);
-  display: inline-block;
-  vertical-align: top;
+  width: calc(33.33% - 16px);
+  display: block;
   background: #fafafa;
   margin-left: 24px;
   text-align: center;
   box-sizing: border-box;
-  padding: 48px 60px;
+  padding: 64px;
+  float: left;
 }
 
 .c_contact .c_contact-chat {
@@ -5568,15 +5577,16 @@ html[lang|="zh"] .search-results-description em {
 
 .c_support {
   margin-bottom: 128px;
+  overflow: hidden;
 }
 
 .c_support .c_support-item {
-  display: inline-block;
+  display: block;
   width: calc(25% - 18px);
-  margin: 0 15px 0 0;
-  vertical-align: top;
+  margin: 0 0 0 24px;
   position: relative;
   overflow: hidden;
+  float: left;
 }
 
 .c_support .c_support-item a {
@@ -5597,8 +5607,8 @@ html[lang|="zh"] .search-results-description em {
   z-index: 6;
 }
 
-.c_support .c_support-item:nth-child(4n) {
-  margin-right: 0;
+.c_support .c_support-item:nth-child(4n+1) {
+  margin-left: 0;
 }
 
 .c_support .c_support-itemLink {
@@ -5638,8 +5648,8 @@ html[lang|="zh"] .search-results-description em {
 
 .c_support .c_suppoprt-itemCTA {
   position: absolute;
-  bottom: 32px;
-  right: 24px;
+  bottom: 16px;
+  right: 32px;
   font-size: 12px;
   text-transform: uppercase;
   color: #ffffff;
@@ -5820,4 +5830,39 @@ html[lang|="zh"] .search-results-description em {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.c_chat {
+  height: 50%;
+  width: 40%;
+  max-width: 600px;
+  position: fixed;
+  bottom: 0;
+  right: 32px;
+  z-index: 600;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+  background-color: #ffffff;
+  border-radius: 0;
+  display: none;
+}
+
+.c_chat-icon {
+  width: 64px;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 500;
+  cursor: pointer;
+}
+
+.c_chat-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 525;
+  display: none;
 }

@@ -17,24 +17,27 @@
 
 .c_products {
 
-  margin-bottom: 128px;
+  margin-bottom: 104px;
+  overflow: hidden;
 
   ul {
     margin: 0;
     padding: 0;
     text-align: left;
+    float: left;
+    width: 100%;
 
     .c_products-item {
       list-style: none;
-      display: inline-block;
-      width: calc(25% - 19px);
-      margin: 12px 15px 12px 0;
-      vertical-align: top;
+      display: block;
+      width: calc(25% - 18px);
+      margin: 0 0 24px 24px;      
       background: $light-gray;
+      float: left;
 
-      &:nth-child(4n) {
-        margin-right: 0;
-      }
+      &:nth-child(4n+1) {
+        margin-left: 0;
+      } 
 
       &:hover {
         background: rgba($black, 0.035);

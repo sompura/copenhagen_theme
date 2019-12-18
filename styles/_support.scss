@@ -1,13 +1,14 @@
 .c_support {
     margin-bottom: 128px;
+    overflow: hidden;
 
     .c_support-item {
-        display: inline-block;
+        display: block;
         width: calc(25% - 18px);
-        margin: 0 15px 0 0;
-        vertical-align: top;
+        margin: 0 0 0 24px;        
         position: relative;
         overflow: hidden;
+        float: left;
 
         a {
             display: block;
@@ -28,9 +29,9 @@
 
         }
         
-        &:nth-child(4n) {
-            margin-right: 0;
-        }
+        &:nth-child(4n+1) {
+            margin-left: 0;
+        }       
         
     }
   
@@ -72,8 +73,8 @@
 
     .c_suppoprt-itemCTA {
         position: absolute;
-        bottom: 32px;
-        right: 24px;
+        bottom: 16px;
+        right: 32px;
         font-size: 12px;
         text-transform: uppercase;
         color: $white;  

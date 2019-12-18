@@ -1,6 +1,7 @@
 .c_contact {
 
     margin-bottom: 128px;
+    overflow: hidden;
 
     h2 {
         font-size: 30px;
@@ -14,14 +15,14 @@
     .c_contact-chat,
     .c_contact-email,
     .c_contact-talk {
-        width: calc(33.33% - 20px);        
-        display: inline-block;
-        vertical-align: top;
+        width: calc(33.33% - 16px);        
+        display: block;
         background: $light-gray;
         margin-left: 24px;
         text-align: center;
         box-sizing: border-box;
-        padding: 48px 60px;
+        padding: 64px;
+        float: left;
     }
 
     .c_contact-chat {

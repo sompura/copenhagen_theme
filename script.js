@@ -233,6 +233,9 @@ var BO_JS = {
     this.$footerContainer = $('.c_footer');
     this.$promotedArticleContainer = $('.c_promoted-articles');
     this.$sectionCategoryContainer = $('.c_section-category');
+    this.$chatIcon = $('.c_chat-icon');
+    this.$chatContainer = $('.c_chat');
+    this.$chatOverlay = $('.c_chat-overlay');
 
     this._setProductsSection();
     this._setVideoResponsive();   
@@ -241,6 +244,7 @@ var BO_JS = {
     //this._fetchCategories();
     //this._fetchGlobalArticles();
     this._equalHeightBoxes();
+    this._initializeChat();
     this._bindEvents();
 
   },
@@ -488,6 +492,43 @@ var BO_JS = {
 
   },
 
+  _initializeChat: function() {    
+
+    const styleSet = window.WebChat.createStyleSet({
+      backgroundColor: 'White',
+      bubbleBackground: '#FAFAFA',
+      bubbleBorderColor: '#E0E0E0',
+      bubbleFromUserBackground: '#FAFAFA',
+      bubbleFromUserBorderColor: '#E0E0E0',
+      botAvatarInitials: 'BANG & OLUFSEN',
+      userAvatarInitials: 'YOU'      
+    });
+
+    styleSet.textContent = {
+      ...styleSet.textContent,
+      fontFamily: "'Gotham A', 'Gotham B', Arial, Helvetica, sans-serif"         
+    };
+
+    const store = window.WebChat.createStore();
+
+    window.WebChat.renderWebChat({
+      directLine: window.WebChat.createDirectLine({
+        token: 'Dp8DTK0tue4.Pg1NZ9B5a7ufSyCgAT7ryBVYLgbkbenHBpkDNDaZamk'
+      }),
+      store,
+      styleSet
+    }, this.$chatContainer.get(0));
+
+    this.$chatContainer.find('> *').focus();
+
+  },
+
+  _displayWebChat: function() {
+    this.$chatContainer.show();
+    this.$chatOverlay.show();
+    this.$chatIcon.hide();
+  },
+
   _bindEvents: function() {
     var self = this;  
     
@@ -547,6 +588,13 @@ var BO_JS = {
       self.$headerMenuTrigger.removeClass('c_header-menu--hidden');
       self.$headerCloseTrigger.removeClass('c_header-close--visible');
       self.$headerNavigation.removeClass('c_header-navigation--open');
+    });
+
+    //window load function
+    $(window).load(function(){      
+      self.$chatIcon.on('click', function() {
+        self._displayWebChat();
+      });
     });
 
   }
