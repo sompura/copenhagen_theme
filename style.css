@@ -117,7 +117,7 @@ body {
 
 @media (min-width: 1024px) {
   body {
-    padding-top: 0;
+    padding-top: 111px;
   }
 }
 
@@ -552,12 +552,18 @@ ul {
   top: 0;
   left: 0;
   z-index: 100;
+  transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
 }
 
 @media (min-width: 1024px) {
   .c_header {
-    position: static;
     height: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .c_header--sticky {
+    top: -63px;
   }
 }
 

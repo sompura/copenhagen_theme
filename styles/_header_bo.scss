@@ -7,12 +7,18 @@
   top: 0;
   left: 0;  
   z-index: 100;
+  transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
 
-  @include desktop {
-    position: static;
+  @include desktop {    
     height: auto;
-  }
+  }  
 
+}
+
+.c_header--sticky {
+  @include desktop {   
+    top: -63px;
+  }
 }
 
 .c_header-branding {

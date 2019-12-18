@@ -226,6 +226,7 @@ var BO_JS = {
     this.$productsContainer = $('.c_products');
     this.$supportContainer = $('.c_support');
     this.$heroHeaderContainer = $('.c_hero');
+    this.$header = $('.c_header');
     this.$headerMenuTrigger = $('.c_header-menu');
     this.$headerCloseTrigger = $('.c_header-close');
     this.$headerNavigation = $('.c_header-navigation');
@@ -236,6 +237,8 @@ var BO_JS = {
     this.$chatIcon = $('.c_chat-icon');
     this.$chatContainer = $('.c_chat');
     this.$chatOverlay = $('.c_chat-overlay');
+
+    this.lastScrollTop = $(window).scrollTop();
 
     this._setProductsSection();
     this._setVideoResponsive();   
@@ -529,6 +532,22 @@ var BO_JS = {
     this.$chatIcon.hide();
   },
 
+  _handleScroll: function() {    
+
+    var scrollTop = $(window).scrollTop();
+
+    if(scrollTop > this.lastScrollTop) {
+      if(scrollTop > this.$header.outerHeight()) {
+        this.$header.addClass('c_header--sticky');
+      }      
+    } else {
+      this.$header.removeClass('c_header--sticky');
+    }
+
+    this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+
+  },
+
   _bindEvents: function() {
     var self = this;  
     
@@ -536,7 +555,12 @@ var BO_JS = {
       self._handleResize();
     }, 50);
 
+    var debounceScroll = self._debounce(function() {                
+      self._handleScroll();
+    }, 10);
+
     $(window).resize(debounceResize);
+    $(window).scroll(debounceScroll);
 
     this.$modalBoxTrigger.on('click', function(e) {
       e.preventDefault();
