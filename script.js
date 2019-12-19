@@ -237,9 +237,13 @@ var BO_JS = {
     this.$chatIcon = $('.c_chat-icon');
     this.$chatContainer = $('.c_chat');
     this.$chatOverlay = $('.c_chat-overlay');
+    this.$guideResourceContainer = $('.guide-resources');
+    this.$cookiePolicy = $('.c_cookiePolicy');
 
     this.lastScrollTop = $(window).scrollTop();
+    this.buffer = 20;
 
+    this._setCookiePolicy();
     this._setProductsSection();
     this._setVideoResponsive();   
     this._setParalax(); 
@@ -265,6 +269,16 @@ var BO_JS = {
         timeout = setTimeout(later, wait);
         if (callNow) func.apply(context, args);
     };
+  },
+
+  _setCookiePolicy: function() {
+    if(!this._readCookie('policyAccepted')) {
+      this.$cookiePolicy.show();
+      this.$footerContainer.addClass('c_footer--cookie');
+    } else {
+      this.$cookiePolicy.hide();
+      this.$footerContainer.removeClass('c_footer--cookie');
+    }
   },
 
   _handleResize: function() {    
@@ -335,6 +349,18 @@ var BO_JS = {
 
     //set the highest height to the section category blocks   
     this.$sectionCategoryContainer.find('.c_section-category-item').height(sectionCategoryHighestBox);
+
+
+    //set the equal height for the user manual blocks
+    var userManualHighestBox = 0; 
+    this.$guideResourceContainer.find('li').each(function(){        
+      if($(this).height() > userManualHighestBox) {
+        userManualHighestBox = $(this).height(); 
+      } 
+    });
+
+    //set the highest height to the user manual blocks  
+    this.$guideResourceContainer.find('li').height(userManualHighestBox);
 
   },
 
@@ -541,11 +567,38 @@ var BO_JS = {
         this.$header.addClass('c_header--sticky');
       }      
     } else {
-      this.$header.removeClass('c_header--sticky');
+      if(scrollTop < this.lastScrollTop - this.buffer) {
+        this.$header.removeClass('c_header--sticky');
+      }      
     }
 
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 
+  },
+
+  _createCookie: function(name,value,days) {
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime()+(days*24*60*60*1000));
+      var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+  },
+
+  _readCookie: function(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+  },
+
+  _eraseCookie: function(name) {
+    createCookie(name,"",-1);
   },
 
   _bindEvents: function() {
@@ -614,10 +667,18 @@ var BO_JS = {
       self.$headerNavigation.removeClass('c_header-navigation--open');
     });
 
+    //cookie policy
+    this.$cookiePolicy.find('.c_cookiePolicy-close a').on('click', function(e) {
+      e.preventDefault();
+      self.$cookiePolicy.hide();
+      self._createCookie('policyAccepted', true);
+      self.$footerContainer.removeClass('c_footer--cookie');
+    });
+
     //window load function
     $(window).load(function(){      
       self.$chatIcon.on('click', function() {
-        self._displayWebChat();
+        self._displayWebChat();        
       });
     });
 

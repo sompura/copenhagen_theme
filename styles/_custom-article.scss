@@ -1,3 +1,35 @@
+.c_custom-article-header {
+    margin: 48px 0;
+
+    h2 {
+        font-weight: 300;
+        font-size: 40px;
+        line-height: 48px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+        letter-spacing: 0.4px;
+        color: #737373;
+    }
+
+    &.c_custom-article-header--guides {
+        max-width: 760px;
+        margin: 48px auto;
+
+        h2,
+        p {
+            text-align: left;
+        }
+
+    }
+
+}
+
 .c_custom-article {
 
     &.c_custom-article--userguide {
@@ -28,6 +60,15 @@
                 font-weight: 500;
             }
 
+            h3 {
+                font-size: 24px;
+                line-height: 30px;
+                letter-spacing: 1px;
+                color: $black;
+                margin-bottom: 48px;
+                font-weight: 400;
+            }
+
             p {
                 font-size: 16px;
                 line-height: 26px;
@@ -45,15 +86,18 @@
                     width: calc(25% - 4px);
                     display: inline-block;
                     vertical-align: top;
-                    margin-bottom: 15px;
+                    margin-bottom: 16px;
 
                     a {
                         color: $dark-gray;
                         text-decoration: none;
+                        font-size: 16px;
+                        line-height: 26px;
+                        letter-spacing: 0.4px;
 
                         &:hover {
                             color: $black;
-                            text-decoration: underline;
+                            text-decoration: none;
                         }
                     }
                 }
@@ -66,70 +110,154 @@
     }
 
     &.c_custom-article--userguideArticle {
+        max-width: 760px;
+        margin: 48px auto;
 
-        padding: 48px 0;
-
-        h2 {
-            font-size: 32px;
-            line-height: 40px;
+        h1 {
+            font-weight: 300;
+            font-size: 50px;
+            line-height: 58px;            
             letter-spacing: 1px;
-            color: $black;
-            margin-bottom: 32px;
-            font-weight: 500;
-            text-align: center;
+            color: $black;  
+            margin: 48px 0;
+            padding: 0;
+        }
+    
+        h2 {
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 48px;            
+            letter-spacing: 1px;
+            color: $black;  
+            margin: 48px 0;
+            padding: 0;
+        }
+    
+        h3 {
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 50px;            
+            letter-spacing: 0.4px;
+            color: $black;  
+            margin: 48px 0;
+            padding: 0;
         }
 
-        .article-manuals {
+        h4 {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 26px;            
+            letter-spacing: 0.4px;
+            color: $black;  
+            margin: 48px 0 16px;
+            padding: 0;
+        }
+    
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;            
+            letter-spacing: 0.4px;
+            color: #737373;  
+            margin: 0 0 24px;
+            padding: 0;
+        
+            > img {
+                width: 100%;
+            }
+    
+        }
 
-            text-align: center;
-            margin-bottom: 128px;
+        a {
+            color: #737373;
+            text-decoration: underline;
 
-            h2 {
-                font-size: 32px;
-                line-height: 40px;
-                letter-spacing: 1px;
+            &:hover {
                 color: $black;
-                margin-bottom: 32px;
-                font-weight: 500;
+                text-decoration: none;
             }
 
-            ul {
+        }
+    
+        li {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;            
+            letter-spacing: 0.4px;
+            color: #737373; 
+        }
+
+        .guide-resources { 
+            
+            ol {
                 margin: 0;
                 padding: 0;
 
                 li {
                     list-style: none;
+                    width: calc(33.33% - 20px);
+                    margin-left: 24px;
+                    margin-right: -4px;
+                    vertical-align: top;
                     display: inline-block;
-                    vertical-align: middle;
-                    width: calc(33.33% - 33px);
-                    margin-left: 44px;
-                    text-align: left;
-                    font-weight: 500;
+                    background: #fafafa;
+                    padding: 48px 24px;
+                    box-sizing: border-box;
+                    text-align: center;
 
                     &:first-child {
                         margin-left: 0;
                     }
 
                     a {
-                        font-weight: normal;
                         text-decoration: none;
-                        border: 2px solid $black;
                         color: $black;
-                        padding: 8px 12px;
-                        display: inline-block;
-                        margin-top: 5px;
+                    }
+                    
+
+                    h4 {
+                        margin: 0 0 24px;
+                        padding: 0;
+
+                        &:after {
+                            content: ' ';
+                            width: 96px;
+                            height: 96px;
+                            display: inline-block;                            
+                            margin-top: 24px;
+                            background: url($assets-ico-pdf-svg) no-repeat center;
+                        }
+                    }
+
+                    p {
+
+                        line-height: 1;
+
+                        a {
+                            font-size: 12px;
+                            line-height: 14px;
+                            letter-spacing: 2px;
+                            color: $black;
+                            text-transform: uppercase;
+                            font-weight: 500;
+
+                            &:after {
+                                content: ' ';
+                                width: 24px;
+                                height: 10px;
+                                display: block;                            
+                                margin-top: 24px;
+                                background: url($assets-arrow-forward-dark-svg) no-repeat center;
+                                margin: 10px auto 0;
+                            }
+
+                        }
+
                     }
 
                 }
 
             }
-
-        }
-
-        .article-software {
-
-            column-count: 2;
-            column-gap: 40px;
 
         }
 

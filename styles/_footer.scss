@@ -2,6 +2,10 @@
 .c_footer {
   background: $light-gray;  
   padding: 54px 0 22px 0;
+
+  &.c_footer--cookie {
+    padding-bottom: 75px;
+  }
   
   &-inner {
     @include max-width-container;
