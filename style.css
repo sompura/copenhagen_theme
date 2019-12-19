@@ -1263,6 +1263,15 @@ ul {
   margin: 0 auto 30px;
 }
 
+.c_hero--guide {
+  height: 300px;
+  background: #c4c4c4;
+}
+
+.c_hero--guide .c_hero-message {
+  color: #000000;
+}
+
 .c_hero-search .search {
   text-align: center;
 }
@@ -5581,6 +5590,68 @@ html[lang|="zh"] .search-results-description em {
   text-decoration: underline;
 }
 
+.c_custom-article.c_custom-article--userguideArticle {
+  padding: 48px 0;
+}
+
+.c_custom-article.c_custom-article--userguideArticle h2 {
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 1px;
+  color: #000000;
+  margin-bottom: 32px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.c_custom-article.c_custom-article--userguideArticle .article-manuals {
+  text-align: center;
+  margin-bottom: 128px;
+}
+
+.c_custom-article.c_custom-article--userguideArticle .article-manuals h2 {
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 1px;
+  color: #000000;
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.c_custom-article.c_custom-article--userguideArticle .article-manuals ul {
+  margin: 0;
+  padding: 0;
+}
+
+.c_custom-article.c_custom-article--userguideArticle .article-manuals ul li {
+  list-style: none;
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(33.33% - 33px);
+  margin-left: 44px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.c_custom-article.c_custom-article--userguideArticle .article-manuals ul li:first-child {
+  margin-left: 0;
+}
+
+.c_custom-article.c_custom-article--userguideArticle .article-manuals ul li a {
+  font-weight: normal;
+  text-decoration: none;
+  border: 2px solid #000000;
+  color: #000000;
+  padding: 8px 12px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.c_custom-article.c_custom-article--userguideArticle .article-software {
+  column-count: 2;
+  column-gap: 40px;
+}
+
 .c_support {
   margin-bottom: 128px;
   overflow: hidden;
@@ -5871,4 +5942,13 @@ html[lang|="zh"] .search-results-description em {
   background: rgba(0, 0, 0, 0.3);
   z-index: 525;
   display: none;
+}
+
+#preview-bar-container {
+  height: auto !important;
+}
+
+#preview-bar-container > div {
+  bottom: 0;
+  top: auto;
 }

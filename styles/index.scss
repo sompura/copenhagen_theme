@@ -53,4 +53,9 @@
 
 #preview-bar-container {
     //display: none;
+    height: auto !important;
+    > div {
+        bottom: 0;
+        top: auto;
+    }
 }
