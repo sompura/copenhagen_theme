@@ -5945,10 +5945,9 @@ html[lang|="zh"] .search-results-description em {
 }
 
 #preview-bar-container {
-  height: auto !important;
-}
-
-#preview-bar-container > div {
-  bottom: 0;
-  top: auto;
+  /*height: auto !important;
+    > div {
+        bottom: 0;
+        top: auto;
+    }*/
 }
