@@ -201,7 +201,7 @@
                     vertical-align: top;
                     display: inline-block;
                     background: #fafafa;
-                    padding: 48px 24px;
+                    padding: 48px 24px 24px;
                     box-sizing: border-box;
                     text-align: center;
 
@@ -218,13 +218,14 @@
                     h4 {
                         margin: 0 0 24px;
                         padding: 0;
+                        font-size: 18px;
 
                         &:after {
                             content: ' ';
-                            width: 96px;
-                            height: 96px;
-                            display: inline-block;                            
-                            margin-top: 24px;
+                            width: 80px;
+                            height: 80px;
+                            display: block;  
+                            margin: 24px auto 0;
                             background: url($assets-ico-pdf-svg) no-repeat center;
                         }
                     }

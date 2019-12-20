@@ -1,0 +1,115 @@
+.c_submitRequest {
+    margin: 0 auto;
+    padding-bottom: 128px;
+    max-width: 760px;
+
+    &-form {
+
+        #new_request {
+
+            .form-field { 
+
+                margin-bottom: 60px;
+                
+                label {
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #737373;
+                    margin: 0 0 5px;
+                }
+
+                input[type="text"] {
+                    border: 0;
+                    border-radius: 0;
+                    border-bottom: 1px solid #e0e0e0;
+                    padding: 0 0 5px;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color:$black;
+
+                    &:focus {
+                        border-bottom: 1px solid #63CD80;
+                    }
+
+                }
+
+                textarea {
+                    border: 1px solid #e0e0e0;
+                    padding: 10px;
+                    min-height: 260px;
+                    
+                    &:focus {
+                        border: 1px solid #63CD80;
+                    }
+
+                }
+
+                #request_description_hint {
+                    display: none;
+                }
+
+                .notification-error {
+                    background: $white;
+                    border: 0;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: #E42525;
+                    font-family: 'Gotham A', 'Gotham B', Arial, Helvetica, sans-serif;
+                    border-radius: 0;
+                    padding: 5px 0;
+
+                    &:before {
+                        display: none;
+                    }
+
+                }
+
+                .upload-dropzone {
+
+                    span {
+                        font-size: 16px;
+                        line-height: 26px;
+                        letter-spacing: 0.4px;
+                        color: #737373;
+
+                        a {
+                            font-size: 16px;
+                            line-height: 26px;
+                            letter-spacing: 0.4px;
+                            color: #737373;
+                            text-decoration: underline;
+                        }
+
+                        &:before {
+                            display: none;
+                        }
+                    }
+
+                }                
+
+            }
+
+            input[type="submit"] {
+                background: $white;
+                border: 2px solid $black;
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: $black;
+                border-radius: 0;
+                text-align: left;
+                padding: 10px 20px;
+                padding-right: 170px;
+                box-sizing: border-box;
+                font-weight: 500;
+                background: url($assets-arrow-forward-dark-svg) no-repeat 95% 16px;
+                background-size: 24px;
+            }
+
+        }
+
+    }
+
+}

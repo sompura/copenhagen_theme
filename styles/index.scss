@@ -51,12 +51,13 @@
 @import "article-list";
 @import "chat";
 @import "cookie-policy";
+@import "submit-request";
 
 #preview-bar-container {
     //display: none;
-    /*height: auto !important;
+    height: auto !important;
     > div {
         bottom: 0;
         top: auto;
-    }*/
+    }
 }

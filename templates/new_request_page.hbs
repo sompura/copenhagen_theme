@@ -1,20 +1,13 @@
-<div class="container-divider"></div>
 <div class="container">
-  <nav class="sub-nav">
-    {{breadcrumbs}}
-    {{search submit=false}}
-  </nav>
-
-  <h1>
-    {{t 'submit_a_request'}}
-    {{#if follow_up}}
-      <span class="follow-up-hint">
-        {{follow_up}}
-      </span>
-    {{/if}}
-  </h1>
-
-  <div class="form">
-    {{request_form}}
+  <div class="c_breadcrumb c_breadcrumb--article">
+    {{breadcrumbs}}    
   </div>
+</div>
+<div class="c_submitRequest">
+    <div class="c_pageHeader">
+      <h1>Submit a question</h1>
+    </div>
+    <div class="c_submitRequest-form">
+      {{request_form}}
+    </div>
 </div>

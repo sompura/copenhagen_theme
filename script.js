@@ -239,6 +239,7 @@ var BO_JS = {
     this.$chatOverlay = $('.c_chat-overlay');
     this.$guideResourceContainer = $('.guide-resources');
     this.$cookiePolicy = $('.c_cookiePolicy');
+    this.$requestForm = $('#new_request');
 
     this.lastScrollTop = $(window).scrollTop();
     this.buffer = 20;
@@ -247,6 +248,7 @@ var BO_JS = {
     this._setProductsSection();
     this._setVideoResponsive();   
     this._setParalax(); 
+    this._setRequestForm();
     //this._fetchUserGuideArticles();
     //this._fetchCategories();
     //this._fetchGlobalArticles();
@@ -599,6 +601,12 @@ var BO_JS = {
 
   _eraseCookie: function(name) {
     createCookie(name,"",-1);
+  },
+
+  _setRequestForm: function() {
+    //re-arranging filed required due to email-address field added by zendesk for non login users
+    var firstItem = this.$requestForm.find('.form-field').eq(0).detach();
+    firstItem.insertAfter(this.$requestForm.find('.form-field').eq(0));
   },
 
   _bindEvents: function() {
